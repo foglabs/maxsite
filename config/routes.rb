@@ -1,4 +1,7 @@
 Maxsite::Application.routes.draw do
+  resources :comics
+  resources :newsies
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

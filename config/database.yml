@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: maxsite_development
   pool: 5
-  username: maxsite
+  username: fog
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: maxsite_test
   pool: 5
-  username: maxsite
+  username: fog
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: maxsite_production
   pool: 5
-  username: maxsite
+  username: fog
   password:
