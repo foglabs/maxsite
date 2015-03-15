@@ -1,0 +1,43 @@
+/*widths*/
+
+.width10 {
+	min-width: 10%;
+	max-width: 10%;
+}
+
+.width20 {
+	min-width: 20%;
+	max-width: 20%;
+}
+
+.width40 {
+	min-width: 40%;
+	max-width: 40%;
+}
+
+.width100 {
+	min-width: 100% !important;
+	max-width: 100% !important;
+}
+
+/* pos */
+
+.bl {
+	position: block;
+}
+
+.inb {
+	position: inline-block;
+}
+
+.in {
+	position: inline;
+}
+
+.rel {
+	position: relative;
+}
+
+.abs {
+	position: absolute;
+}
