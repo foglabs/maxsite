@@ -73,10 +73,22 @@ table {
 	max-width: 40%;
 }
 
+.W60 {
+	min-width: 60%;
+	width: 60%;
+	max-width: 60%;
+}
+
 .W100 {
 	min-width: 100%;
 	width: 100%;
 	max-width: 100%;
+}
+
+.H50 {
+	min-height: 50%;
+	height: 50%;
+	max-height: 50%;
 }
 
 .H100 {
@@ -118,6 +130,10 @@ table {
 
 /* colors */
 
+body {
+	background-color: #000000;
+}
+
 .black {
 	color: #000000;
 }
@@ -130,6 +146,10 @@ table {
 	color: #C28827;
 }
 
+.lttan {
+	color: #DD9927;
+}
+
 .Bblack {
 	background-color: #000000;
 }
@@ -137,6 +157,45 @@ table {
 .Btan {
 	background-color: #C28827;
 }
+
+/*fonts*/
+
+.font10 {
+	font-size: 10px;
+}
+
+.font18 {
+	font-size: 18px;
+}
+
+.font24 {
+	font-size: 24px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/* pad marg */
+
+.pad05 {
+	padding: 0.05%;
+}
+
+.pad5 {
+	padding: 5%;
+}
+
+.marg0 {
+	margin: 0px;
+}
+
+/*border*/
+
+.bord {
+	border: 1px solid;
+}
+
 /* specifics */
 
 .comSize {

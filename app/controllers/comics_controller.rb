@@ -4,5 +4,4 @@ class ComicsController < ApplicationController
 		@comic = Comic.last
 		@news = Newsie.last(10)
 	end
-
 end

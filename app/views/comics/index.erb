@@ -1,19 +1,20 @@
 
-<div class='W100 in left Bblack'>
+<div class='W100 left Bblack'>
 
 	<span class="W10 minH in left">
 	</span>
 
 	<span class="W20 minH in left Btan">
-		<span class='bl white'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
-		<span class='bl white'><b>@freddyblassy :: </b>Huh?</span>
+		<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
+		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
+		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
 		<br>
 		<br>
 
 	</span>
 
 	<span class="W40 minH in left white Btan">
-		<h1><%= @comic.title %></h1>
+		<h1 class=""><%= @comic.title %></h1>
 		<%= image_tag(@comic.img, class: 'comSize' ) %><br>
 		<a><%= @comic.desc %></a>
 		<br>
@@ -21,7 +22,7 @@
 	</span>
 
 	<span class="W20 minH in left Btan white">
-<span>alskdfjsdaklfjsklfj</span>
+<span>Supercalifragilistic</span>
 		<br>
 		<br>
 
@@ -32,16 +33,28 @@
 
 </div>
 
-<div class="W100 in left Bblack">
+<div class="W100 left Bblack">
 		<span class="W30 minH in left">
-	</span>
+		</span>
 
-	<span class="W40 minH in left white Btan">
-		<h1><%= @news.title %></h1>
-		<a><%= @news.body %></a>
-		<br>
-		<br>
-	</span>
+		<span class="W40 minH in left white Btan">
+
+			<h1 class="font18">------NEWS------</h1>
+
+			<% @news.each do |newsie| %>
+				
+			<div class='bord lttan W100'>
+				<h1 class="bold white"><%= newsie.title %></h1>
+			</div>
+			<div class='bord lttan W100'>
+				<a class="white"><%= newsie.body %></a><br>
+				<a class="white font10"><%= newsie.created_at %></a>
+				<br>
+				<br>
+			</div>
+			<% end %>
+		</span>
+
 
 	<span class="W30 minH in left">
 	</span>
