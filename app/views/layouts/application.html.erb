@@ -17,7 +17,55 @@
 
 	</div>
 
-<%= yield %>
+
+
+<div class='W100 left Bblack'>
+
+	<span class="W10 minH in left">
+	</span>
+
+	<span class="W20 minH in left Btan">
+		<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
+		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
+		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
+		<br>
+		<br>
+
+	</span>
+
+	<%= yield %>
+
+	<span class="W10 minH in left">
+	</span>
+
+</div>
+
+<div class="W100 left Bblack">
+		<span class="W30 minH in left">
+		</span>
+
+		<span class="W60 minH in left white Btan">
+
+			<h1 class="font18">------NEWS------</h1>
+
+			<% @news.each do |newsie| %>
+				
+			<div class='bord lttan W100 pad05'>
+				<h1 class="bold white"><%= newsie.title %></h1>
+			</div>
+			<div class='bord lttan W100 pad05'>
+				<a class="white"><%= newsie.body %></a><br>
+				<a class="white font10"><%= newsie.created_at %></a>
+				<br>
+				<br>
+			</div>
+			<% end %>
+		</span>
+</div>
+
+
+
+
 
 </body>
 </html>

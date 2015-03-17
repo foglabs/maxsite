@@ -1,4 +1,3 @@
-
 <div class='W100 left Bblack'>
 
 	<span class="W10 minH in left">
@@ -10,23 +9,18 @@
 		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
 		<br>
 		<br>
-
 	</span>
 
-	<span class="W40 minH in left white Btan">
+	<span class="W60 minH in left white Btan">
 		<h1 class=""><%= @comic.title %></h1>
 		<%= image_tag(@comic.img, class: 'comSize' ) %><br>
 		<a><%= @comic.desc %></a>
 		<br>
 		<br>
+
+		<%= link_to "Next", comic_path( @comic.nextcom ) %>
 	</span>
 
-	<span class="W20 minH in left Btan white">
-<span>Supercalifragilistic</span>
-		<br>
-		<br>
-
-	</span>
 
 	<span class="W10 minH in left">
 	</span>
@@ -37,16 +31,16 @@
 		<span class="W30 minH in left">
 		</span>
 
-		<span class="W40 minH in left white Btan">
+		<span class="W60 minH in left white Btan">
 
 			<h1 class="font18">------NEWS------</h1>
 
 			<% @news.each do |newsie| %>
 				
-			<div class='bord lttan W100'>
+			<div class='bord lttan W100 pad05'>
 				<h1 class="bold white"><%= newsie.title %></h1>
 			</div>
-			<div class='bord lttan W100'>
+			<div class='bord lttan W100 pad05'>
 				<a class="white"><%= newsie.body %></a><br>
 				<a class="white font10"><%= newsie.created_at %></a>
 				<br>
@@ -54,9 +48,4 @@
 			</div>
 			<% end %>
 		</span>
-
-
-	<span class="W30 minH in left">
-	</span>
-
 </div>
