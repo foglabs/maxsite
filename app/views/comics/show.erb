@@ -1,13 +1,18 @@
 
-	<span class="W60 minH in left white Btan">
-		<h1 class=""><%= @comic.title %></h1>
+	<span class="W70 minH in left white Btan">
+		<div class="W100">
+			<div class='bord'>
+				<h1 class="font18"><%= @comic.title %></h1>
+			</div>
+		</div>
+
 		<%= image_tag(@comic.img, class: 'comSize' ) %><br>
-		<a><%= @comic.desc %></a>
+		<span><%= @comic.desc %></span>
 		<br>
 		<br>
 
-		<%= link_to_if @comic.nextcom, "Next", comic_path( @comic.nextcom ) %>
-
+		<%= link_to "Previous", comic_path( @comic.lastcom ) %>
+		<%= link_to "Next", comic_path( @comic.nextcom ) %>
 	</span>
 
 

@@ -3,10 +3,12 @@ class Comic < ActiveRecord::Base
 	validates :position, uniqueness: true
 
 	def nextcom
-		Comic.where( position: self.position + 1 ).first.try(:id)
+		c = Comic.where( position: self.position + 1 ).first.try(:id)
+		c ? c : Comic.last.id
 	end
 
 	def lastcom
-		Comic.where( position: self.position - 1 ).first.try(:id)
+		c = Comic.where( position: self.position - 1 ).first.try(:id)
+		c ? c : Comic.last.id
 	end
 end

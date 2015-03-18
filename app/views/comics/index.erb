@@ -1,51 +1,31 @@
-<div class='W100 left Bblack'>
 
-	<span class="W10 minH in left">
-	</span>
-
-	<span class="W20 minH in left Btan">
-		<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
-		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-		<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-		<br>
-		<br>
-	</span>
-
-	<span class="W60 minH in left white Btan">
-		<h1 class=""><%= @comic.title %></h1>
-		<%= image_tag(@comic.img, class: 'comSize' ) %><br>
-		<a><%= @comic.desc %></a>
-		<br>
-		<br>
-
-		<%= link_to "Next", comic_path( @comic.nextcom ) %>
-	</span>
-
-
-	<span class="W10 minH in left">
-	</span>
-
-</div>
-
-<div class="W100 left Bblack">
-		<span class="W30 minH in left">
-		</span>
-
-		<span class="W60 minH in left white Btan">
-
-			<h1 class="font18">------NEWS------</h1>
-
-			<% @news.each do |newsie| %>
-				
-			<div class='bord lttan W100 pad05'>
-				<h1 class="bold white"><%= newsie.title %></h1>
+	<span class="W70 minH in left white Btan">
+		<div class="W100">
+			<div class='bord'>
+				<h1 class="font18"><%= @comic.title %></h1>
 			</div>
-			<div class='bord lttan W100 pad05'>
-				<a class="white"><%= newsie.body %></a><br>
-				<a class="white font10"><%= newsie.created_at %></a>
+		</div>
+
+		<div class="W100">
+			<span class='left W10 in minH'>
+			</span>
+
+			<span class='left W80 in minH'>
 				<br>
-				<br>
-			</div>
-			<% end %>
-		</span>
-</div>
+				<%= image_tag(@comic.img, class: 'W100' ) %><br>
+				<span><%= @comic.desc %></span>
+			<br>
+			<br>
+
+			<%= link_to "Previous", comic_path( @comic.lastcom ), class: 'comButton, pad5, Blttan' %>
+			<%= link_to "Next", comic_path( @comic.nextcom ), class: 'comButton, pad5, Blttan' %>
+			</span>
+
+			<span class='left W10 in minH'>
+			</span>
+		</div>
+
+		<br>
+
+	</span>
+

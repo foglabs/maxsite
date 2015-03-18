@@ -10,7 +10,7 @@
 
 	<div class="W100 in left">
 		<div class="W20 minH in left"> </div>
-		<div class="W60 in left">
+		<div class="W70 in left">
 			<h1 class="white font24 in left">Mayhem Champion by Max W</h1>
 		</div>
 		<div class="W20 minH in left"></div>
@@ -21,7 +21,7 @@
 
 <div class='W100 left Bblack'>
 
-	<span class="W10 minH in left">
+	<span class="W5 minH in left">
 	</span>
 
 	<span class="W20 minH in left Btan">
@@ -35,32 +35,45 @@
 
 	<%= yield %>
 
-	<span class="W10 minH in left">
+	<span class="W5 minH in left">
 	</span>
 
 </div>
 
 <div class="W100 left Bblack">
-		<span class="W30 minH in left">
+		<span class="W25 minH in left">
 		</span>
 
-		<span class="W60 minH in left white Btan">
+		<span class="W70 minH in left white Btan">
+
+			<br>
+			<br>
 
 			<h1 class="font18">------NEWS------</h1>
+			<br>
 
 			<% @news.each do |newsie| %>
-				
-			<div class='bord lttan W100 pad05'>
-				<h1 class="bold white"><%= newsie.title %></h1>
-			</div>
-			<div class='bord lttan W100 pad05'>
-				<a class="white"><%= newsie.body %></a><br>
-				<a class="white font10"><%= newsie.created_at %></a>
-				<br>
-				<br>
-			</div>
+				<div class="W100">
+					<div class='bord lttan'>
+						<h1 class="bold white font18"><%= newsie.title %></h1>
+					</div>
+				</div>
+				<div class="W100">
+					<div class='bord lttan'>
+						<a class="white"><%= newsie.body %></a><br>
+						<a class="white font10"><%= newsie.format_time %></a>
+						<br>
+						<br>
+					</div>
+				</div>
 			<% end %>
 		</span>
+
+		<span class="W25 minH in left">
+		</span>
+
+
+
 </div>
 
 
