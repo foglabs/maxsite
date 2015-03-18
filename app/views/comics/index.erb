@@ -12,13 +12,16 @@
 
 			<span class='left W80 in minH'>
 				<br>
-				<%= image_tag(@comic.img, class: 'W100' ) %><br>
+				<%= image_tag(@comic.img, class: 'W100' ) %>
+				<br>
+				<br>
 				<span><%= @comic.desc %></span>
-			<br>
-			<br>
+				<br>
+				<br>
+				<br>
 
-			<%= link_to "Previous", comic_path( @comic.lastcom ), class: 'comButton, pad5, Blttan' %>
-			<%= link_to "Next", comic_path( @comic.nextcom ), class: 'comButton, pad5, Blttan' %>
+			<%= link_to "Previous", comic_path( @comic.lastcom ), class: 'comButton, Blttan' %>
+			<%= link_to "Next", comic_path( @comic.nextcom ), class: 'comButton, Blttan' %>
 			</span>
 
 			<span class='left W10 in minH'>
