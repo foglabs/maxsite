@@ -4,7 +4,6 @@ class Comic < ActiveRecord::Base
 
 	def nextcom
 		first = Comic.where('position > ?', position).try(:first)
-		first ||= Comic.first 
 
 		# c = nil
 		# trying = self.position + 1
@@ -23,7 +22,6 @@ class Comic < ActiveRecord::Base
 
 	def lastcom
 		last = Comic.where('position < ?', position).try(:first)
-		last ||= Comic.first 
 		# c = nil
 		# trying = self.position - 1
 
