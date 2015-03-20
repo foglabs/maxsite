@@ -3,40 +3,40 @@ class Comic < ActiveRecord::Base
 	validates :position, uniqueness: true
 
 	def nextcom
-		# c = Comic.where( position: self.position + 1 ).first.try(:id)
-		# c ? c : Comic.last.id
+		first = Comic.where('position > ?', position).try(:first)
+		first ||= Comic.first 
 
-		c = nil
-		trying = self.position + 1
+		# c = nil
+		# trying = self.position + 1
 
-		# in case the order is fucked up
-		unless c
-			c = Comic.where( position: trying ).first.try(:id)
-			trying += 1
-		else
-			c = Comic.last
-		end
+		# # in case the order is fucked up
+		# while true
+		# 	c = Comic.where( position: trying )
+		# 	break unless c == nil
+		# 	trying += 1
+		# end
 
-		c
+		# a = c.try(:first)
+		# a ||= Comic.last
+		# a.id
 	end
 
 	def lastcom
-		# c = Comic.where( position: self.position - 1 ).first.try(:id)
-		# c ? c : Comic.last.id
+		last = Comic.where('position < ?', position).try(:first)
+		last ||= Comic.first 
+		# c = nil
+		# trying = self.position - 1
 
-		c = nil
-		trying = self.position - 1
+		# # in case the order is fucked up
+		# while true
+		# 	c = Comic.where( position: trying )
+		# 	break unless c == nil
+		# 	break if trying	< 1
+		# 	trying -= 1
+		# end
 
-		# in case the order is fucked up
-		unless c || trying < 1
-			c = Comic.where( position: trying ).first.try(:id)
-			trying -= 1
-		end
-
-		if trying < 1
-			c = Comic.last
-		end
-		
-		c
+		# a = c.try(:first)
+		# a ||= Comic.first
+		# a.id
 	end
 end
