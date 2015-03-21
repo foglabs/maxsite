@@ -20,8 +20,13 @@
 				<br>
 				<br>
 
-			<%= link_to "Previous", comic_path( @comic.lastcom ), class: 'comButton, Blttan' %>
-			<%= link_to "Next", comic_path( @comic.nextcom ), class: 'comButton, Blttan' %>
+				<% if a = @comic.lastcom %>
+					<%= link_to "Previous", comic_path( a ), class: 'comButton, Blttan' %>
+				<% end %>
+				<% if b = @comic.nextcom %>
+					<%= link_to "Next", comic_path( b ), class: 'comButton, Blttan' %>
+				<% end %>
+				
 			</span>
 
 			<span class='left W10 in minH'>
