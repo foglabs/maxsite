@@ -65,7 +65,7 @@ a:hover {
 }
 
 a:visited {
-	color: #000000;
+	color: #FFFFFF;
 }
 /*widths heights*/
 
@@ -103,6 +103,11 @@ a:visited {
 	min-width: 30%;
 	width: 30%;
 	max-width: 30%;
+}
+.W33 {
+	min-width: 33%;
+	width: 33%;
+	max-width: 33%;
 }
 
 .W35 {
@@ -280,3 +285,4 @@ body {
 .comButton {
 	text-decoration: none;
 }
+

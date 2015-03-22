@@ -1,0 +1,8 @@
+<br>
+<div class="font24 white">
+  <% @tags.each do |tag| %>
+    <div class="white">
+      <%= link_to tag.word, tag_path(tag) %><br><br>
+    </div>
+  <% end %>
+</div>

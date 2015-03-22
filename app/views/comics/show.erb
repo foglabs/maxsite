@@ -11,11 +11,19 @@
 
 			<span class='left W80 in minH'>
 				<br>
-				<%= image_tag(@comic.img, class: 'W100, bord, Blttan' ) %>
+				<%= image_tag(@comic.img, class: 'W100 bord Blttan')  %>
 				<br>
 				<br>
-				<span><%= @comic.desc %></span>
+				<span><%= @comic.desc %></span><br>
+			<span class'bl white left'>
+				<% @taggy.each do |tag| %>
+					<%= link_to tag.word, tag_path(tag) %>
+				<% end %>
+			</span>
+
 				<br>
+			<span class'bl white left'><%= render 'tags/new' %></span>
+
 				<br>
 				<br>
 				<% if a = @comic.lastcom %>

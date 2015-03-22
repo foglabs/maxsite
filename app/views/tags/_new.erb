@@ -1,0 +1,7 @@
+<%= form_for @tag do |f| %>
+  <%=  f.label :word, 'Tag This'  %>
+  <%= f.text_field :word %>
+  <%= f.hidden_field :comic_id, value: @comic.id %>
+  <%= f.submit %>
+
+<% end %>
