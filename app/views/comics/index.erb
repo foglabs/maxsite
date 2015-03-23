@@ -18,14 +18,15 @@
 				<span><%= @comic.desc %></span>
 				<br>
 				<br>
-				<br>
 
 				<% if a = @comic.lastcom %>
-					<%= link_to "Previous", comic_path( a ), class: 'comButton, Blttan' %>
+					<%= link_to "Previous", comic_path( a ), class: 'comButton, Blttan blob' %>
 				<% end %>
 				<% if b = @comic.nextcom %>
-					<%= link_to "Next", comic_path( b ), class: 'comButton, Blttan' %>
+					<%= link_to "Next", comic_path( b ), class: 'comButton, Blttan blob' %>
 				<% end %>
+				<br>
+				<br>
 				
 			</span>
 

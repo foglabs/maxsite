@@ -1,7 +1,10 @@
 <div class="Btan white">
   <% @comics.each do |comic| %>
-    <%= link_to comic.title, comic %><br>
-    <%= image_tag(comic.img, class: 'W5' ) %>
+    <div class='Byell Bblobdiv'>
+      <%= link_to comic.title, comic, {class: 'blob Bblob'} %><br>
+      <%= image_tag(comic.img, class: 'W5' ) %>
+    </div>
+    <br>
   <% end %>
 
 </div>

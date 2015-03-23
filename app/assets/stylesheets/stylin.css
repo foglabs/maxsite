@@ -53,11 +53,13 @@ hr {
 	border: 2px solid #A42255;
 }
 
-
 a {
 	text-decoration: none;
 	color: #FFFFFF;
-	padding: 18px;
+}
+
+a {
+	font-family: 'Sigmar One'
 }
 
 a:hover {
@@ -222,14 +224,31 @@ body {
 }
 
 .Btan {
-	background-color: #C28827;
+	background-color: #A9FFA8;
 }
 
 .Blttan {
 	background-color: #DD9927;
 }
 
+.Bblob {
+	background-color: #95CCFF;
+}
+
+div:hover.Bblobdiv {
+	background-color: #FF0000;
+}
+
+.Byell {
+	background-color: #FFE34D;
+}
+
+
 /*fonts*/
+
+.fSig {
+	font-family: 'Sigmar One'
+}
 
 .font10 {
 	font-size: 10px;
@@ -261,6 +280,10 @@ body {
 	padding: 0.5%;
 }
 
+.pad2 {
+	padding: 2%;
+}
+
 .pad5 {
 	padding: 5%;
 }
@@ -273,14 +296,26 @@ body {
 	margin: 0px;
 }
 
+.mar10LR {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
 /*border*/
 
 .bord {
-	border: 4px solid #DD9927;
+	border: 4px solid #8DE8D2;
 }
 
 /* specifics */
 
+a.blob {
+	background-color: #95CCFF;	
+}
+
+a:hover.blob  {
+	background-color: #FF0000;	
+}
 
 .comButton {
 	text-decoration: none;
