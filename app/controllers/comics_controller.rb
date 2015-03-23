@@ -3,7 +3,12 @@ class ComicsController < ApplicationController
 	def index
 		@comic = Comic.last
 		@news = Newsie.last(10)
+
 		@tags = Tag.all
+		@tag = Tag.new
+
+ 		@taggy = []
+		ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
 	end
 
 	def show
