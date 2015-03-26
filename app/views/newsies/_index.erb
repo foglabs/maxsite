@@ -1,0 +1,15 @@
+<% @news.each do |newsie| %>
+  <div class="W100">
+    <div class='bord lttan'>
+      <h1 class="bold white font18 pad05"><%= newsie.title %></h1>
+    </div>
+  </div>
+
+  <div class="W100">
+    <div class='bord lttan white'>
+      <span class="white fBodies pad05"><%= newsie.body %></span><br>
+      <hr>
+      <span class="white font10"><%= newsie.format_time %></span>
+    </div>
+  </div>
+<% end %>

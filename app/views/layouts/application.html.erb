@@ -4,7 +4,7 @@
   <title>Maxsite</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <link href='http://fonts.googleapis.com/css?family=Sigmar+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,7 +12,10 @@
 	<div class="W100 in">
 		<span class="W5 minH in left"> </span>
 		<span class="W60 in left">
-			<h1 class="white font32 in fSig">Mayhem Champion by Max W</h1>
+			<h1 class="white font48 in fSig">Mayhem Champion by Max W</h1>
+			<br>
+			<br>
+			<br>
 		</span>
 		<span class="W35 minH in left"></span>
 	</div>
@@ -22,8 +25,8 @@
 <div class='W100 left Bblack'>
 	<span class="W5 minH in left"> </span>
 
-	<div class="W25 in"><%= link_to 'Home', comics_path  %></div>
-	<div class="W33 in"><%= link_to 'Contact', comics_path  %></div>
+	<div class="W25 in"><%= link_to 'Home Base', comics_path, {class: 'blob Bblob pad2' } %></span></div>
+	<div class="W33 in"><%= link_to 'Story So Far', comics_path, {class: 'blob Bblob pad2' } %></div>
 	<div class="W33 in"></div>
 </div>
 
@@ -62,22 +65,7 @@
 
 
 		<span class="W70 minH in left black Btan">
-
-
-			<% @news.each do |newsie| %>
-				<div class="W100">
-					<div class='bord lttan'>
-						<h1 class="bold black font18"><%= newsie.title %></h1>
-					</div>
-				</div>
-				<div class="W100">
-					<div class='bord lttan'>
-						<span class="black"><%= newsie.body %></span><br>
-						<hr>
-						<span class="white font10"><%= newsie.format_time %></span>
-					</div>
-				</div>
-			<% end %>
+			<%= render 'newsies/index' %>
 		</span>
 
 		<span class="W25 minH in left">

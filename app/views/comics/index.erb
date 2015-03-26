@@ -11,30 +11,32 @@
 
 			<span class='left W80 in minH'>
 				<br>
+
 				<%= image_tag(@comic.img, {class: 'W100 bord Blttan'})  %>
+				
 				<br>
 				<br>
-				<span><%= @comic.desc %></span><br>
-				<span class'bl white left'>
-					<br>
-					<% @taggy.each do |tag| %>
-							<%= link_to tag.word, tag_path(tag), {class: 'pad05 Bblob blob'} %>
+				<div class='W100'>
+					<span class='W25 left'>
+						<% if a = @comic.lastcom %>
+							<%= link_to "Previous", comic_path( a ), {class: 'inb comButton Byell pad2 blob'} %>
+						<% end %>
+						<% if b = @comic.nextcom %>
+							<%= link_to "Next", comic_path( b ), {class: 'inb comButton black Byell pad2 blob'} %>
+						<% end %>
+					</span>
+					<span class='inb W25 left'><%= @comic.desc %></span><br>
 
-					<% end %>
-					<br>
-				</span>
+					<span class'inb white W35 left'>
+						<% @taggy.each do |tag| %>
+								<%= link_to tag.word, tag_path(tag), {class: 'pad05 Bblob blob'} %>
 
-				<br>
-				<span class'bl white left'><%= render 'tags/new' %></span>
+						<% end %>
+						<br>
+					</span>
 
-				<br>
-				<br>
-				<% if a = @comic.lastcom %>
-					<%= link_to "Previous", comic_path( a ), {class: 'comButton Byell pad2 blob'} %>
-				<% end %>
-				<% if b = @comic.nextcom %>
-					<%= link_to "Next", comic_path( b ), {class: 'comButton black Byell pad2 blob'} %>
-				<% end %>
+					<span class'inb white W10 left'><%= render 'tags/new' %></span>
+				</div>
 				<br>
 				<br>
 				<br>

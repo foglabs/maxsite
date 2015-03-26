@@ -49,6 +49,10 @@ table {
 
 /*general*/
 
+body {
+	font-family: 'Orbitron';
+}
+
 hr {
 	border: 2px solid #222255;
 }
@@ -59,7 +63,7 @@ a {
 }
 
 a {
-	font-family: 'Sigmar One'
+	font-family: 'Orbitron';
 }
 
 a:hover {
@@ -148,6 +152,12 @@ a:visited {
 	max-width: 80%;
 }
 
+.W90 {
+	min-width: 90%;
+	width: 90%;
+	max-width: 90%;
+}
+
 .W100 {
 	min-width: 100%;
 	width: 100%;
@@ -212,41 +222,48 @@ body {
 }
 
 .tan {
-	color: #C28827;
+	color: #888888;
 }
 
 .lttan {
-	color: #DD9927;
+	color: #333333;
 }
 
 .Bblack {
 	background-color: #000000;
 }
+	/*background-color: #DD9927;
+	background-color: #A9FFA8;
+	*/
 
 .Btan {
-	background-color: #A9FFA8;
+	background-color: #888888;
 }
 
 .Blttan {
-	background-color: #DD9927;
+	background-color: #333333;
 }
 
 .Bblob {
-	background-color: #95CCFF;
+	background-color: #999999;
 }
 
-div:hover.Bblobdiv {
+a:hover.Bblobdiv {
 	background-color: #FF0000;
 }
 
 .Byell {
-	background-color: #FFE34D;
+	background-color: #DDDDDD;
 }
 
 /*fonts*/
 
 .fSig {
-	font-family: 'Sigmar One'
+	font-family: 'Orbitron'
+}
+
+.fBodies {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif
 }
 
 .font10 {
@@ -263,6 +280,10 @@ div:hover.Bblobdiv {
 
 .font32 {
 	font-size: 32px;
+}
+
+.font48 {
+	font-size: 48px;
 }
 
 .bold {
@@ -303,19 +324,20 @@ div:hover.Bblobdiv {
 /*border*/
 
 .bord {
-	border: 4px solid #8DE8D2;
+	border: 4px solid #EEEEEE;
 }
 
 /* specifics */
 
 a.blob {
-	background-color: #95CCFF;	
+	background-color: #DDDDDD;
+	color: #000000;
 }
 
 a:hover.blob  {
 	background-color: #FF0000;	
 }
-
+	
 .comButton {
 	text-decoration: none;
 }
