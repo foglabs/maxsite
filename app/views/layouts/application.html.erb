@@ -9,25 +9,18 @@
 </head>
 <body>
 
-	<div class="W100 in">
-		<span class="W5 minH in left"> </span>
-		<span class="W60 in left">
-			<h1 class="white font48 in fSig">Mayhem Champion by Max W</h1>
-			<br>
-			<br>
-			<br>
-		</span>
-		<span class="W35 minH in left"></span>
-	</div>
 
-
-
-<div class='W100 left Bblack'>
+<div class='W100 left Bblack nowrap'>
 	<span class="W5 minH in left"> </span>
 
-	<div class="W25 in"><%= link_to 'Home Base', comics_path, {class: 'blob Bblob pad2' } %></span></div>
-	<div class="W33 in"><%= link_to 'Story So Far', comics_path, {class: 'blob Bblob pad2' } %></div>
-	<div class="W33 in"></div>
+	<span class="W50 in Bblob">
+		<%= link_to image_tag('/assets/header.jpg', {class: 'blob Bblob'}), comics_path, {class: 'blob Bblob' } %>
+	</span>
+
+	<span class="W15 in"><%= link_to image_tag('/assets/homebase.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob' } %></span></span>
+	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob ' } %></span>
+	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob ' } %></span>
+
 </div>
 
 <div class='W100 left Bblack'>
@@ -36,19 +29,21 @@
 	</span>
 
 	<span class="W20 minH in left Btan">
-		<span class='bl white left'>
-			<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
-			<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-			<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-		</span>
-		
-			<br>
-			<br>
-			<br>
-			<br>
-		
-		<span class'bl white left'><%= render 'tags/index' %></span>
+		<div class='bord'>
+			<span class='bl white left'>
+				<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
+				<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
+				<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
+			</span>
+				<br>
+				<br>
+				<br>
+				<br>
+			
+			<span class'bl white left'><%= render 'tags/index' %></span>
 
+			</span>
+		</div>
 
 	</span>
 
@@ -57,7 +52,6 @@
 	<span class="W5 minH in left">
 	</span>
 
-</div>
 
 <div class="W100 left Bblack">
 		<span class="W25 minH in left">

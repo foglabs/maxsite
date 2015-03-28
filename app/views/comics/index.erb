@@ -1,52 +1,66 @@
-	<span class="W70 minH in left black Btan">
-		<div class="W100">
-			<div class='bord'>
-				<h1 class="font24 fSig black"><%= @comic.title %></h1>
+<span class="W70 minH in left white Btan">
+	<div class="W100">
+		<div class='bord'>
+
+			<span class='W33 minH in'></span>
+
+			<span class='W33 minH in'>
+				<h1 class="font48 fSig white W100 center"><%= @comic.title %></h1>
+			</span>
+
+			<span class='W33 minH in'></span>
+		</div>
+	</div>
+
+	<div class="W100 minH20 Bblack up20 rel o20">
+	</div>
+
+	<div class="W100 left">
+		<span class='left W10 in minH'>
+		</span>
+
+		<span class='left W80 in minH'>
+
+			<%= image_tag(@comic.img, {class: 'W100 bord Blttan'})  %>
+			<div class="W100">
+				<span class="W33 left minH in"></span>
+
+				<span class="W33 left minH in nowrap">			
+					<% if a = @comic.lastcom %>
+						<%= link_to image_tag('/assets/tb1.jpg'), comic_path( a ), {class: 'in W33'} %>
+					<% else %>
+						<%= image_tag('/assets/tb1', {class: 'in'}) %>
+					<% end %>
+
+					<%= image_tag('/assets/tb2', {class: 'in'}) %>
+
+					<% if b = @comic.nextcom %>
+						<%= link_to image_tag('/assets/tb3'), comic_path( b ), {class: 'in W33'} %>
+					<% else %>
+						<%= image_tag('/assets/tb3', {class: 'in'}) %>
+					<% end %>
+				</span>
+				<span class="W33 left minH in"></span>
 			</div>
-		</div>
 
-		<div class="W100 ">
-			<span class='left W10 in minH'>
-			</span>
+			<div class='W100 '>
 
-			<span class='left W80 in minH'>
-				<br>
+				<span class="W5 left minH in"></span>
 
-				<%= image_tag(@comic.img, {class: 'W100 bord Blttan'})  %>
-				
-				<br>
-				<br>
-				<div class='W100'>
-					<span class='W25 left'>
-						<% if a = @comic.lastcom %>
-							<%= link_to "Previous", comic_path( a ), {class: 'inb comButton Byell pad2 blob'} %>
-						<% end %>
-						<% if b = @comic.nextcom %>
-							<%= link_to "Next", comic_path( b ), {class: 'inb comButton black Byell pad2 blob'} %>
-						<% end %>
-					</span>
-					<span class='inb W25 left'><%= @comic.desc %></span><br>
+				<span class="W90 left minH in">
+					<% @taggy.each do |tag| %>
+							<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
+					<% end %>
+				</span>
 
-					<span class'inb white W35 left'>
-						<% @taggy.each do |tag| %>
-								<%= link_to tag.word, tag_path(tag), {class: 'pad05 Bblob blob'} %>
+				<span class="W5 left minH in"></span>
+			</div>
+		</span>
 
-						<% end %>
-						<br>
-					</span>
+		<span class='left W10 in minH'>
+		</span>
+	</div>
 
-					<span class'inb white W10 left'><%= render 'tags/new' %></span>
-				</div>
-				<br>
-				<br>
-				<br>
-			</span>
+	<br>
 
-			<span class='left W10 in minH'>
-			</span>
-		</div>
-
-		<br>
-
-	</span>
-
+</span>

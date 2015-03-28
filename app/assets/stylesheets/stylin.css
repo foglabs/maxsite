@@ -54,12 +54,12 @@ body {
 }
 
 hr {
-	border: 2px solid #222255;
+	border: 2px solid #343434;
 }
 
 a {
 	text-decoration: none;
-	color: #FFFFFF;
+	color: #22FF22;
 }
 
 a {
@@ -71,7 +71,7 @@ a:hover {
 }
 
 a:visited {
-	color: #FFFFFF;
+	color: #22FF22;
 }
 /*widths heights*/
 
@@ -178,6 +178,17 @@ a:visited {
 
 /* pos */
 
+.nowrap {
+	white-space: nowrap;
+}
+
+.center {
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	vertical-align: middle;
+	text-align: center;
+}
+
 .left {
 	float: left;
 }
@@ -185,6 +196,22 @@ a:visited {
 .minH {
 	min-width: 1px;
 	min-height: 1px;
+}
+
+.minH20 {
+	min-height: 20px;
+}
+
+.H100 {
+	min-height: 1em;
+}
+
+.MH100 {
+	max-height: 50px;
+}
+
+.up20 {
+	top: -20px;
 }
 
 .bl {
@@ -205,6 +232,12 @@ a:visited {
 
 .abs {
 	position: absolute;
+}
+
+/*opacity*/
+
+.o20 {
+	opacity: .2;
 }
 
 /* colors */
@@ -245,7 +278,7 @@ body {
 }
 
 .Bblob {
-	background-color: #999999;
+	background-color: #22FF22;
 }
 
 a:hover.Bblobdiv {
@@ -330,11 +363,16 @@ a:hover.Bblobdiv {
 /* specifics */
 
 a.blob {
-	background-color: #DDDDDD;
+	border: 2px solid;
+	background-color: #22FF22;
 	color: #000000;
 }
 
 a:hover.blob  {
+	background-color: #FF0000;	
+}
+
+img:hover.blob {
 	background-color: #FF0000;	
 }
 	
