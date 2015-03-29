@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mayhem Champion</title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+<div class='W100 left Bblack nowrap'>
+  <span class="W5 minH in left"> </span>
+
+  <span class="W50 in Bblob">
+    <%= link_to image_tag('/assets/header.png', {class: 'blob Bgreen bord'}), comics_path, {class: 'blob Bblob' } %>
+  </span>
+
+  <span class="W15 in"><%= link_to image_tag('/assets/homebase.png', {class: 'blob Bgreen W10 bord'}), comics_path, {class: 'blob Bgreen' } %></span></span>
+  <span class="W15 in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bgreen W10 bord'}), comics_path, {class: 'blob Bgreen ' } %></span>
+  <span class="W15 in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bgreen W10 bord'}), comics_path, {class: 'blob Bgreen ' } %></span>
+
+</div>
+
+  <div class='W100 left Bblack'>
+
+    <span class="W5 minH in left">
+    </span>
+
+    <%= yield %>
+    
+    <span class="W5 minH in left">
+    </span>
+
+  </div>
+
+</body>
+</html>

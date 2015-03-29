@@ -1,25 +1,40 @@
 class ComicsController < ApplicationController
+	layout "admin", only: :admin
+
+	before_filter :errybody
+
+	def errybody
+		@news = Newsie.last(10)
+		@tags = Tag.all
+
+	end
+
+	def admin
+		@comics = Comic.all.order(created_at: :asc)
+		@news = Newsie.all
+
+		@comic = Comic.new
+		@newsie = Newsie.new
+	end
 
 	def index
 		@comic = Comic.last
-		@news = Newsie.last(10)
 
-		@comms = Comment.where(comic_id: @comic.id)
-		@comm = Comment.new
+		if @comic
+			@comms = Comment.where(comic_id: @comic.id)
+			@comm = Comment.new
 
-		@tags = Tag.all
-		@tag = Tag.new
+			@tag = Tag.new
 
- 		@taggy = []
-		ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
+			@taggy = []
+			ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
+		end
 	end
 
 	def show
 		# change to give appropriate news from displayed comic
 		@comm = Comment.new
 		@comms = Comment.where(comic_id: params[:id])
-		@news = Newsie.last(10)
-		@tags = Tag.all
 		@tag = Tag.new
 		@comic_tag = ComicTag.new
 
@@ -31,19 +46,22 @@ class ComicsController < ApplicationController
 
 	def create
 		@comic = Comic.create(comic_params)
-		@news = Newsie.last(10)
 
 		if @comic.save
-			redirect_to comic_path(@comic)
+			redirect_to admin_comics_path
 		else
 			render 'new'
 		end
 	end
 
 	def new
-		@tags = Tag.all
-		@news = Newsie.last(10)
 		@comic = Comic.new
+	end
+
+	def destroy
+		@comic = Comic.find(params[:id])
+		@comic.destroy
+		redirect_to admin_comics_path
 	end
 
 	private

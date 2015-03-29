@@ -1,0 +1,54 @@
+<span class='W45 in left'>
+  <div class='pad5 inb Byell'>
+    <h1 class='white Bblack pad2'>COMICS</h1>
+
+    <% @comics.each do |a| %>
+      <div class='Btan inb'>
+        <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05'><%= a.title %>::</span><span class='Byell pad05'><%= a.desc %></span>
+        
+        <%= link_to image_tag(a.img, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
+        
+        <div class='Bblack pad05 in'><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'blob pad05' %></div>
+      </div>
+      <br>
+      <br>
+    <% end %>
+
+  </div>
+  
+  <div class='pad5 inb Byell'>
+    <h1 class='white Bblack pad5'>NEWS</h1>
+    <% @news.each do |a| %>
+      <div class='Btan bl bordBlack'>
+        <span class='Bblob pad2'><%= a.title %></span><span class='Byell'>::::::</span><div class='Bblack pad05 in'><%= link_to 'DELETE', newsy_path(a), method: :delete, class: 'blob pad05' %></div>
+
+        <br>
+        <br>
+        <span class='Byell pad05'>
+          <%= a.body %>
+        </span>
+        <span class='font8 white Bblack'><%= a.created_at %></span>
+        <br>
+        <br>
+
+        
+        
+      </div>
+      <br>
+    <% end %>
+
+  </div>
+
+</span>
+
+<span class='W45 in left'>
+  <div class='pad5 inb Byell W50'>
+    <span class='Btan pad5 white'>new comic</span>
+    <%= render 'comics/new' %>
+
+    <br>
+
+    <span class='Btan pad5 white'>new newsie</span>
+    <%= render 'newsies/new' %>
+  </div>
+</span>

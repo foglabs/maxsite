@@ -1,0 +1,16 @@
+<span class="blob Bblob white bl pad5">
+  <%= form_for @newsie do |f| %>
+    <span class='Byell black pad05'>
+      <%= f.label :title, "Title" %>
+      <%= f.text_field :title %>
+    </span>
+    <br>
+    
+    <span class='Byell black pad05'>
+      <%= f.label :body, "Body" %>
+      <%= f.text_field :body %>
+    </span>
+    <br>
+    <%= f.submit "Post"  %>
+  <% end %>
+</span>

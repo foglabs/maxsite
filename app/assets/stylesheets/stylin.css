@@ -133,6 +133,12 @@ div {
 	max-width: 40%;
 }
 
+.W45 {
+	min-width: 45%;
+	width: 45%;
+	max-width: 45%;
+}
+
 .W60 {
 	min-width: 60%;
 	width: 60%;

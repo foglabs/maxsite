@@ -1,5 +1,10 @@
 Maxsite::Application.routes.draw do
-  resources :comics
+
+  resources :comics do
+    collection do
+      get 'admin'
+    end
+  end
   resources :comments
 
   resources :tags do
