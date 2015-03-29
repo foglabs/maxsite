@@ -22,7 +22,7 @@ class Comic < ActiveRecord::Base
 	end
 
 	def lastcom
-		last = Comic.where('position < ?', position).try(:first)
+		last = Comic.where('position < ?', position).try(:last)
 		# c = nil
 		# trying = self.position - 1
 
