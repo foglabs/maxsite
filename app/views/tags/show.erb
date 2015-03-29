@@ -1,8 +1,7 @@
 <div class="Btan white">
   <% @comics.each do |comic| %>
-      <span class='W10 inb'><%= link_to (comic.title + '<br>'  + image_tag( comic.img, {class: 'W100' } ) ).html_safe,
-                                         comic, {class: 'Bblobdiv blob Bblob fSig font32'} %>
-                                         <br>
+      <span class='W20 inb nowrap'><%= link_to (comic.title + '<br>'  + image_tag( comic.img, {class: 'W100' } ) ).html_safe,
+                                         comic, {class: 'Bblobdiv blob Bblob fSig font18 nowrap pad2'} %>
       </span>
   <% end %>
 </div>

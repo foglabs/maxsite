@@ -5,7 +5,7 @@
 			<span class='W33 minH in'></span>
 
 			<span class='W33 minH in'>
-				<h1 class="font48 fSig white W100 center"><%= @comic.title %></h1>
+				<span class='minH Bwhite pad05 bl'><h1 class="font48 fSig black W100 center"><%= @comic.title %></h1></span>
 			</span>
 
 			<span class='W33 minH in'></span>
@@ -75,18 +75,19 @@
 
 	  <span class='W90 minH left'>
 			<%= render 'comments/show' %>
+			<br>
+			<br>
+
 		</span>
 
 	  <span class='W5 minH left'></span>
 
 	</div>
-
 	<div class='black W100'>
 	  <div class='bord'>
 			<%= render 'comments/new' %>
 		</div>
 	</div>
-	<Br>
 	<div class='black W100'>
 	  <div class='bord'>
 			<%= render 'newsies/index' %>
