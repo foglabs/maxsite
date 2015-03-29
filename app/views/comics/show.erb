@@ -20,8 +20,9 @@
 		</span>
 
 		<span class='left W80 in minH'>
-
+				<br>
 			<%= image_tag(@comic.img, {class: 'W100 bord Blttan'})  %>
+
 			<div class="W100">
 				<span class="W33 left minH in"></span>
 
@@ -40,7 +41,9 @@
 						<%= image_tag('/assets/tb3', {class: 'in'}) %>
 					<% end %>
 				</span>
+
 				<span class="W33 left minH in"></span>
+
 			</div>
 
 			<div class='W100'>
@@ -51,6 +54,10 @@
 					<% @taggy.each do |tag| %>
 							<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
 					<% end %>
+					<br>
+					<br>
+
+
 				</span>
 
 				<span class="W5 left minH in"></span>
@@ -59,6 +66,26 @@
 
 		<span class='left W10 in minH'>
 		</span>
+	</div>
+
+
+	<div class='black W100'>
+	  <div class='bord'>
+			<%= render 'comments/show' %>
+		</div>
+	</div>
+
+	<div class='black W100'>
+	  <div class='bord'>
+			<%= render 'comments/new' %>
+		</div>
+	</div>
+	<Br>
+	<div class='black W100'>
+	  <div class='bord'>
+			<%= render 'newsies/index' %>
+
+		</div>
 	</div>
 
 	<br>

@@ -1,0 +1,7 @@
+<% @comms.each do |comm| %>
+  <div class='blob bordBlack Bgray inb pad05 W15'>
+    <span class='bl Blttan black pad2 fSig Bblob'><span class='bold font12'><%= comm.name.upcase %></span> said:</span>
+    <span class='bl font12 fBodies Btan pad5 white'><%= comm.body %></span><br>
+    <span class='font8 Btan bl white pad2'><%= comm.format_time %></span>
+  </div>
+<% end %>

@@ -4,6 +4,9 @@ class ComicsController < ApplicationController
 		@comic = Comic.last
 		@news = Newsie.last(10)
 
+		@comms = Comment.where(comic_id: @comic.id)
+		@comm = Comment.new
+
 		@tags = Tag.all
 		@tag = Tag.new
 
@@ -13,6 +16,8 @@ class ComicsController < ApplicationController
 
 	def show
 		# change to give appropriate news from displayed comic
+		@comm = Comment.new
+		@comms = Comment.where(comic_id: params[:id])
 		@news = Newsie.last(10)
 		@tags = Tag.all
 		@tag = Tag.new
@@ -22,7 +27,6 @@ class ComicsController < ApplicationController
 
  		@taggy = []
 		ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
-
 	end
 
 	def create
@@ -37,6 +41,7 @@ class ComicsController < ApplicationController
 	end
 
 	def new
+		@tags = Tag.all
 		@news = Newsie.last(10)
 		@comic = Comic.new
 	end

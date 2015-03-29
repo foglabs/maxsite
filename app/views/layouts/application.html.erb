@@ -14,58 +14,50 @@
 	<span class="W5 minH in left"> </span>
 
 	<span class="W50 in Bblob">
-		<%= link_to image_tag('/assets/header.jpg', {class: 'blob Bblob'}), comics_path, {class: 'blob Bblob' } %>
+		<%= link_to image_tag('/assets/header.png', {class: 'blob Bwhite'}), comics_path, {class: 'blob Bblob' } %>
 	</span>
 
-	<span class="W15 in"><%= link_to image_tag('/assets/homebase.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob' } %></span></span>
-	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob ' } %></span>
-	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.jpg', {class: 'blob Bblob W10'}), comics_path, {class: 'blob Bblob ' } %></span>
+	<span class="W15 in"><%= link_to image_tag('/assets/homebase.png', {class: 'blob Bwhite W10'}), comics_path, {class: 'blob Bwhite' } %></span></span>
+	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bwhite W10'}), comics_path, {class: 'blob Bwhite ' } %></span>
+	<span class="W15 in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bwhite W10'}), comics_path, {class: 'blob Bwhite ' } %></span>
 
 </div>
 
 <div class='W100 left Bblack'>
 
+
 	<span class="W5 minH in left">
 	</span>
 
-	<span class="W20 minH in left Btan">
-		<div class='bord'>
-			<span class='bl white left'>
-				<span class='bl white left'><b>@classydame446 :: </b>I just love how *CLASSY* this is!</span>
-				<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-				<span class='bl white left'><b>@freddyblassy :: </b>Huh?</span>
-			</span>
-				<br>
-				<br>
-				<br>
-				<br>
-			
-			<span class'bl white left'><%= render 'tags/index' %></span>
+	<span class="W20 minH in left Blttan">
 
-			</span>
+		<div class='W100 left Blttan'>
+		<div class='bord'>
+			<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/foglabs" data-widget-id="581999883978207232">Tweets by @foglabs</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+		</div>
 		</div>
 
+		<div class='W100 left Bblack'>
+			<span class'in white left'><%= render 'tags/index' %></span>
+		</div>
 	</span>
 
 	<%= yield %>
 
 	<span class="W5 minH in left">
 	</span>
-
+</div>
 
 <div class="W100 left Bblack">
 		<span class="W25 minH in left">
 		</span>
 
-
 		<span class="W70 minH in left black Btan">
-			<%= render 'newsies/index' %>
 		</span>
 
-		<span class="W25 minH in left">
+		<span class="W5 minH in left">
 		</span>
-
-
 
 </div>
 

@@ -1,0 +1,10 @@
+<div class='white'>
+    <%= form_for @comm do |f| %>
+      <%=  f.label :name, 'Name'  %>
+      <%= f.text_field :name %>
+      <%=  f.label :body, 'Comment'  %>
+      <%= f.text_field :body %>
+      <%= f.hidden_field :comic_id, value: @comic.id %>
+      <%= f.submit %>
+    <% end %>
+</div>

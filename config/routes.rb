@@ -1,5 +1,7 @@
 Maxsite::Application.routes.draw do
   resources :comics
+  resources :comments
+
   resources :tags do
     resources :comic_tags, only: [:new, :create, :destroy]
   end
