@@ -1,5 +1,7 @@
 Maxsite::Application.routes.draw do
 
+  root 'comics#index'
+
   resources :comics do
     collection do
       get 'admin'
