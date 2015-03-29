@@ -1,16 +1,28 @@
 <br>
 <br>
-<span class="blob Bblob white bl">
+<span class="blob Bblob white bl pad5">
 	<%= form_for @comic do |f| %>
-		<%= f.label :title, "Title" %>
-		<%= f.text_field :title %>
-		<%= f.label :desc, "Desc" %>
-		<%= f.text_field :desc %>
-		<%= f.label :img, "img" %>
-		<%= f.text_field :img %>
-		<%= f.label :position, "Position" %>
-		<%= f.text_field :position %>
+		<span class='Byell black pad05'>
+			<%= f.label :title, "Title" %>
+			<%= f.text_field :title %>
+		</span>
+		<br>
+		<span class='Byell black pad05'>
+			<%= f.label :desc, "Desc" %>
+			<%= f.text_field :desc %>
+		</span>
+		<br>
 
+		<span class='Byell black pad05'>
+			<%= f.label :img, "img" %>
+			<%= f.text_field :img %>
+		</span>
+		<br>
+		<span class='Byell black pad05'>
+			<%= f.label :position, "Position" %>
+			<%= f.text_field :position %>
+		</span>
+		<br>
 		<%= f.submit "Post"  %>
 	<% end %>
 </span>
