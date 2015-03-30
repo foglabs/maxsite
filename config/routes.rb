@@ -4,6 +4,7 @@ Maxsite::Application.routes.draw do
 
   resources :comics do
     collection do
+      get 'login'
       get 'admin'
     end
   end

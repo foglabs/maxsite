@@ -2,11 +2,25 @@ class ComicsController < ApplicationController
 	layout "admin", only: :admin
 
 	before_filter :errybody
+	before_filter :login, only: :admin
 
 	def errybody
 		@news = Newsie.last(10)
 		@tags = Tag.all
+	end
 
+	def login
+		@logging = Login.new('')
+	end
+
+	def log_me_in
+		@logging = Login.new(params[:pass])
+
+	 	if @logging.log_in(@logging.pass_attempt)
+	 		redirect_to admin_comics_path
+	 	else
+	 		redirect_to comics_path
+	 	end
 	end
 
 	def admin
