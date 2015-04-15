@@ -189,6 +189,10 @@ div {
 
 /* pos */
 
+.overf {
+	overflow: hidden;
+}
+
 .nowrap {
 	white-space: nowrap;
 }
@@ -417,8 +421,14 @@ img:hover.blob {
 }
 
 .belt {
+	
 	display: inline-block !important;
 
 	margin: -2px !important;
 	padding: 0px !important;
+}
+
+.beltline {
+	max-height: 10em;
+	line-height: 10em;
 }

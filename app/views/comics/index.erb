@@ -25,10 +25,10 @@
 
 			<div class="W100 in">
 
-				<span class="W15 left minH in nowrap"></span>
-				<span class="W70 left minH in nowrap">
+				<span class="W20 left minH in nowrap"></span>
+				<span class="W60 left minH in nowrap beltline">
 					<% if a = @comic.lastcom %>
-						<%= link_to image_tag('/assets/b1.png'), comic_path( a ), {class: 'in belt'} %>
+						<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
 					<% else %>
 						<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
 					<% end %>
@@ -36,12 +36,12 @@
 					<%= image_tag('/assets/b2.png', {class: 'in belt'}) %>
 
 					<% if b = @comic.nextcom %>
-						<%= link_to image_tag('/assets/b3.png'), comic_path( b ), {class: 'in belt'} %>
+						<%= link_to image_tag('/assets/b3.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
 					<% else %>
 						<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
 					<% end %>
 				</span>
-				<span class="W15 left minH in nowrap"></span>
+				<span class="W20 left minH in nowrap"></span>
 			</div>
 			
 			<% unless @taggy.empty? %>
@@ -68,7 +68,7 @@
 		<span class='left W10 in minH'>
 		</span>
 	</div>
-
+<br>
 
 	<div class='black W100'>
 
