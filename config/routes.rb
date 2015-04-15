@@ -6,6 +6,7 @@ Maxsite::Application.routes.draw do
     collection do
       get 'login'
       get 'admin'
+      get 'storysofar'
     end
   end
   resources :comments

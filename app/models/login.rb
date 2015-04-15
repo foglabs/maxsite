@@ -15,13 +15,13 @@ class Login
 
   def log_in(guess)
     if validate_pw(guess)
-      @success =  true
+      @success = true
     else
       @success = false
     end
   end
 
   def lemmeseesomeid
-    @sucess
+    @success
   end
 end

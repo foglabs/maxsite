@@ -31,6 +31,13 @@ class ComicsController < ApplicationController
 		@newsie = Newsie.new
 	end
 
+	def storysofar
+		@comm = Comment.new
+		@comms = Comment.where(comic_id: params[:id])
+		@tag = Tag.new
+		@comic_tag = ComicTag.new
+	end
+
 	def index
 		@comic = Comic.last
 

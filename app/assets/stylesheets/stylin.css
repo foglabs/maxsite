@@ -399,6 +399,7 @@ a.blob {
 	background-color: #22FF22;
 	color: #000000;
 }
+
 img.blob {
 	border-radius: 2px;
 }
@@ -415,3 +416,9 @@ img:hover.blob {
 	text-decoration: none;
 }
 
+.belt {
+	display: inline-block !important;
+
+	margin: -2px !important;
+	padding: 0px !important;
+}
