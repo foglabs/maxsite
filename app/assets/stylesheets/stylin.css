@@ -217,6 +217,10 @@ div {
 	min-height: 20px;
 }
 
+.minH100 {
+	min-height: 200px
+}
+
 .H100 {
 	min-height: 1em;
 }

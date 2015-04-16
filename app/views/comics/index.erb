@@ -27,19 +27,26 @@
 
 				<span class="W20 left minH in nowrap"></span>
 				<span class="W60 left minH in nowrap beltline">
-					<% if a = @comic.lastcom %>
-						<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
-					<% else %>
-						<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
-					<% end %>
 
-					<%= image_tag('/assets/b2.png', {class: 'in belt'}) %>
+					<div class='W100 rel minH100'>
+					<span class='abs '>
+						<% if a = @comic.lastcom %>
+							<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
+						<% end %>
 
-					<% if b = @comic.nextcom %>
-						<%= link_to image_tag('/assets/b3.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
-					<% else %>
-						<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
-					<% end %>
+						<%= image_tag('/assets/b2.png', {class: 'in belt'}) %>
+
+						<% if b = @comic.nextcom %>
+							<%= link_to image_tag('/assets/b3.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
+						<% end %>
+
+					</span>
+					</div>
+
 				</span>
 				<span class="W20 left minH in nowrap"></span>
 			</div>
