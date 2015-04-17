@@ -10,11 +10,7 @@ class ComicsController < ApplicationController
 	end
 
 	def login
-		@logging = Login.new('')
-	end
-
-	def log_me_in
-		@logging = Login.new(params[:pass])
+		@logging = params ? Login.new(params[:pass]) : Login.new(nil)
 
 	 	if @logging.log_in(@logging.pass_attempt)
 	 		redirect_to admin_comics_path
@@ -24,11 +20,19 @@ class ComicsController < ApplicationController
 	end
 
 	def admin
-		@comics = Comic.all.order(created_at: :asc)
-		@news = Newsie.all
 
-		@comic = Comic.new
-		@newsie = Newsie.new
+		if @logging.log_in(@logging.pass_attempt)
+
+			@comics = Comic.all.order(created_at: :asc)
+			@news = Newsie.all
+
+			@comic = Comic.new
+			@newsie = Newsie.new
+
+		else
+			redirect_to comics_path
+		end
+
 	end
 
 	def storysofar

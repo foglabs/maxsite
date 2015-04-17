@@ -5,6 +5,7 @@ Maxsite::Application.routes.draw do
   resources :comics do
     collection do
       get 'login'
+      post 'login'
       get 'admin'
       get 'storysofar'
       get 'contax'

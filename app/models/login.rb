@@ -1,7 +1,12 @@
 class Login
+
   def initialize(pass_attempt)
     @pass_attempt = pass_attempt
     @success = false
+  end
+
+  def pass_attempt
+    @pass_attempt
   end
 
   def encrypt_pw(pw)
@@ -15,13 +20,13 @@ class Login
 
   def log_in(guess)
     if validate_pw(guess)
-      @success = true
+      @success =  true
     else
       @success = false
     end
   end
 
   def lemmeseesomeid
-    @success
+    @sucess
   end
 end
