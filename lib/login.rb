@@ -9,21 +9,8 @@ class Login
     @pass_attempt
   end
 
-  def encrypt_pw(pw)
-    $salt = 'F8'
-    $crypted = pw.crypt($salt)
-  end
-
-  def validate_pw(guess)
-    guess.crypt($salt) == $crypted
-  end
-
-  def log_in(guess)
-    if validate_pw(guess)
-      @success =  true
-    else
-      @success = false
-    end
+  def validate_pw
+    @pass_attempt == 'SHININGFINGER' ? @success = true : nil
   end
 
   def lemmeseesomeid

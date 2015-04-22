@@ -1,10 +1,15 @@
 <span class="blob Bblob white bl pad5">
-  <%= form_for :login do |f| %>
+  <%= form_tag(auth_comics_path, method: :post) do %>
     <span class='Byell black pad05'>
-      <%= f.label :pass, "Password" %>
-      <%= f.text_field :pass %>
+      <%= text_field_tag :pass %>
     </span>
     <br>
-    <%= f.submit "Login"  %>
+    <%= submit_tag "Login"  %>
   <% end %>
+
+  <% if @sess %>
+    <%= link_to "Log Out", logout_comics_path(@sess) %>
+  <% end %>
+
 </span>
+

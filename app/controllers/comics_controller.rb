@@ -1,38 +1,46 @@
 class ComicsController < ApplicationController
+	require 'login'
 	layout "admin", only: :admin
 
 	before_filter :errybody
-	before_filter :login, only: :admin
 
 	def errybody
+		@sess = Session.where(code: request.remote_ip).first
 		@news = Newsie.last(10)
 		@tags = Tag.all
 	end
 
 	def login
-		@logging = params ? Login.new(params[:pass]) : Login.new(nil)
+		@logging = Login.new(nil)
+	end
 
-	 	if @logging.log_in(@logging.pass_attempt)
-	 		redirect_to admin_comics_path
+	def logout
+		@sess.destroy
+		redirect_to comics_path
+	end
+
+	def auth
+		@logging = params[:pass] ? Login.new(params[:pass]) : nil
+
+	 	unless @logging.validate_pw
+	 		redirect_to login_comics_path
 	 	else
-	 		redirect_to comics_path
+	 		@sess = Session.create(code: request.remote_ip)
+	 		redirect_to admin_comics_path
 	 	end
 	end
 
 	def admin
-
-		if @logging.log_in(@logging.pass_attempt)
-
+		unless @sess.try(:check)
+			redirect_to comics_path
+		else
+		
 			@comics = Comic.all.order(created_at: :asc)
 			@news = Newsie.all
 
 			@comic = Comic.new
 			@newsie = Newsie.new
-
-		else
-			redirect_to comics_path
 		end
-
 	end
 
 	def storysofar
@@ -49,8 +57,6 @@ class ComicsController < ApplicationController
 			@comms = Comment.where(comic_id: @comic.id)
 			@comm = Comment.new
 
-			@tag = Tag.new
-
 			@taggy = []
 			ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
 		end
@@ -60,7 +66,6 @@ class ComicsController < ApplicationController
 		# change to give appropriate news from displayed comic
 		@comm = Comment.new
 		@comms = Comment.where(comic_id: params[:id])
-		@tag = Tag.new
 		@comic_tag = ComicTag.new
 
  		@comic = Comic.find(params[:id])

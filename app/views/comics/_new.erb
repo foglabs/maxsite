@@ -1,5 +1,5 @@
 <span class="blob Bblob white bl pad5">
-	<%= form_for @comic do |f| %>
+	<%= form_for @comic, multipart: true do |f| %>
 		<span class='Byell black pad05'>
 			<%= f.label :title, "Title" %>
 			<%= f.text_field :title %>
@@ -12,8 +12,8 @@
 		<br>
 
 		<span class='Byell black pad05'>
-			<%= f.label :img, "img" %>
-			<%= f.text_field :img %>
+			<%= f.label :image, "img" %>
+			<%= f.file_field :image %>
 		</span>
 		<br>
 		<span class='Byell black pad05'>
