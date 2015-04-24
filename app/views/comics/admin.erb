@@ -6,7 +6,7 @@
       <div class='Btan inb'>
         <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05'><%= a.title %>::</span><span class='Byell pad05'><%= a.desc %></span>
         
-        <%= link_to image_tag(a.img, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
+        <%= link_to image_tag(a.image.url, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
         
         <div class='Bblack pad05 in'><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'blob pad05' %></div>
       </div>

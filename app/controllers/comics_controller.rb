@@ -4,6 +4,7 @@ class ComicsController < ApplicationController
 
 	before_filter :errybody
 
+# login
 	def errybody
 		@sess = Session.where(code: request.remote_ip).first
 		@news = Newsie.last(10)
@@ -42,6 +43,7 @@ class ComicsController < ApplicationController
 			@newsie = Newsie.new
 		end
 	end
+# 
 
 	def storysofar
 		@comm = Comment.new
@@ -80,7 +82,7 @@ class ComicsController < ApplicationController
 		if @comic.save
 			redirect_to admin_comics_path
 		else
-			render 'new'
+			render 'comics/admin'
 		end
 	end
 
@@ -96,6 +98,6 @@ class ComicsController < ApplicationController
 
 	private
 		def comic_params
-			params.require(:comic).permit(:title, :desc, :img, :position, comic_tag_attributes: [:comic_id, :tag_id])
+			params.require(:comic).permit(:title, :desc, :image, :position, comic_tag_attributes: [:comic_id, :tag_id])
 		end
 end

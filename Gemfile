@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.10'
 
 gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 # Use postgresql as the database for Active Record
 gem 'pg'
