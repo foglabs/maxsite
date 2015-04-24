@@ -8,6 +8,4 @@
 
 
 Comic.create(img: '/assets/comics/comic1.jpg', desc: 'This is A crazy Comic!', title: 'Check me Out!', position: 1)
-Comic.create(img: '/assets/comics/comic1.jpg', desc: 'Comic Number Two!', title: 'Same as the first', position: 2)
-Comic.create(img: '/assets/comics/comic1.jpg', desc: 'Patrick Swayze', title: 'Checking it out', position: 3)
 

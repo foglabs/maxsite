@@ -7,10 +7,10 @@ class Comic < ActiveRecord::Base
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
 	def nextcom
-		first = Comic.where('position > ?', position).try(:first)
+		Comic.where('position > ?', position).try(:first)
 	end
 
 	def lastcom
-		last = Comic.where('position < ?', position).try(:last)
+		Comic.where('position < ?', position).try(:last)
 	end
 end
