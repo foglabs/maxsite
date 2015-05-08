@@ -1,27 +1,15 @@
-<span class="W70 minH in left white Btan">
-	<div class="W100">
-		<div class='bordBlackT'>
+<span class="W75 minH in left white Btan">
 
-			<span class='W33 minH in'></span>
-
-			<span class='W33 minH in'>
-				<span class='minH Bwhite pad05 bl'><h1 class="font48 fSig black W100 center"><%= @comic.title %></h1></span>
-			</span>
-
-			<span class='W33 minH in'></span>
-		</div>
-	</div>
-
-	<div class="W100 minH20 Bblack up20 rel o20">
+	<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
 	</div>
 
 	<div class="W100 left">
-		<span class='left W10 in minH'>
+		<span class='left W25 in minH'>
 		</span>
 
-		<span class='left W80 in minH'>
+		<span class='left W50 in minH'>
 			<br>
-					<%= image_tag(@comic.image.url, {class: 'W100 bordBlackT Blttan'})  %>
+			<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
 
 			<div class="W100 in">
 
@@ -30,6 +18,7 @@
 
 					<div class='W100 rel minH100'>
 						<span class='abs up16'>
+
 							<% if a = @comic.lastcom %>
 								<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
 							<% else %>
@@ -84,10 +73,11 @@
 			
 		</span>
 
-		<span class='left W10 in minH'>
+		<span class='left W25 in minH'>
 		</span>
 	</div>
-<br>
+	
+	<br>
 
 	<div class='black W100'>
 
@@ -104,9 +94,7 @@
 
 	</div>
 	<div class='black W100'>
-	  <div class='bordBlackT'>
 			<%= render 'comments/new' %>
-		</div>
 	</div>
 	<div class='black W100'>
 	  <div class='bordBlackT'>
@@ -118,3 +106,8 @@
 	<br>
 
 </span>
+
+<script type="text/javascript">
+	document.getElementById('bar').width
+
+</script>
