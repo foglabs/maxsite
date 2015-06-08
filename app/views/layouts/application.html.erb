@@ -3,72 +3,69 @@
 	<head>
 	  <title>Mayhem Champion</title>
 	  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-	  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+		<script src="assets/javascripts/jquery-2.1.4.min.js"></script>
+
 	  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	  <%= csrf_meta_tags %>
 	</head>
 <body>
 
-<div class='W100 left Bblack nowrap'>
-	<span class="W5 minH in left"> </span>
+	<div class='W100 left Bblack nowrap'>
+		<span class="W5 minH in left"> </span>
 
-	<span class="W50 in Bblob">
-		<%= link_to image_tag('/assets/header.png', {class: 'W40 blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
-	</span>
-
-	<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob W10 bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
-	<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob W10 bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
-	
-	<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob W10 bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
-
-  <% if @sess %>
-		<span class="W10 in"><%= link_to "◊", admin_comics_path, {class: 'blob Bblob font12 white pad2'} %></span>
-		<span class="W10 in"><%= link_to "Exit", logout_comics_path(@sess), {class: 'blob Bblob font12 white pad2'} %></span>
-  <% end %>
-</div>
-
-<div class='W100 left Bblack'>
-
-	<span class="W5 minH in left">
-	</span>
-
-	<span class="W15 minH in left Blttan">
-
-		<div class='W100 left Blttan'>
-			<a data-chrome="transparent" class="twitter-timeline" href="https://twitter.com/mayhemchampion" data-widget-id="588840829789274112">Tweets by @mayhemchampion</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
-		</div>
-
-		<div class='W100 left Byell'>
-			<div class='bordBlack'>
-				<h1 class='pad5 white Bblack'>Tags</h1>
-			</div>
-
-			<span class'in white left'><%= render 'tags/index' %></span>
-		</div>
-	</span>
-
-	<%= yield %>
-
-	<span class="W5 minH in left">
-	</span>
-</div>
-
-<div class="W100 left Bblack">
-		<span class="W25 minH in left">
+		<span class="W50 in Bblob">
+			<%= link_to image_tag('/assets/header.png', {class: 'W40 blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
 		</span>
 
-		<span class="W70 minH in left black Btan">
-		</span>
+		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob W10 bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob W10 bordBlack'}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+		
+		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob W10 bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+
+	  <% if @sess %>
+			<span class="W10 in"><%= link_to "◊", admin_comics_path, {class: 'blob Bblob font12 white pad2'} %></span>
+			<span class="W10 in"><%= link_to "Exit", logout_comics_path(@sess), {class: 'blob Bblob font12 white pad2'} %></span>
+	  <% end %>
+	</div>
+
+	<div class='W100 left Bblack'>
 
 		<span class="W5 minH in left">
 		</span>
 
-</div>
+		<span class="W15 minH in left Blttan">
 
+			<div class='W100 left Blttan'>
+				<a data-chrome="transparent" class="twitter-timeline" href="https://twitter.com/mayhemchampion" data-widget-id="588840829789274112">Tweets by @mayhemchampion</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+			</div>
 
+			<div class='W100 left Byell'>
+				<div class='bordBlack'>
+					<h1 class='pad5 white Bblack'>Tags</h1>
+				</div>
 
+				<span class'in white left'><%= render 'tags/index' %></span>
+			</div>
+		</span>
 
+		<%= yield %>
+
+		<span class="W5 minH in left">
+		</span>
+	</div>
+
+	<div class="W100 left Bblack">
+			<span class="W25 minH in left">
+			</span>
+
+			<span class="W70 minH in left black Btan">
+			</span>
+
+			<span class="W5 minH in left">
+			</span>
+
+	</div>
 
 </body>
 </html>

@@ -80,6 +80,14 @@ div {
 
 /*widths heights*/
 
+.P1pt5 {
+	padding: 1.5%;
+}
+
+.P2 {
+	padding: 2%;
+}
+
 .W5 {
 	min-width: 5%;
 	width: 5%;

@@ -1,14 +1,13 @@
 <span class="W75 minH in left white Btan">
 
-	<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
+	<div id="bar" class="W100 minH20 Bblack up20 abs o20 ">
 	</div>
 
 	<div class="W100 left">
-		<span class='left W25 in minH'>
+		<span class='left W15 in minH'>
 		</span>
 
-		<span class='left W50 in minH'>
-			<br>
+		<span class='left W70 in minH'>
 			<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
 
 			<div class="W100 in">
@@ -73,7 +72,7 @@
 			
 		</span>
 
-		<span class='left W25 in minH'>
+		<span class='left W15 in minH'>
 		</span>
 	</div>
 	
@@ -107,7 +106,14 @@
 
 </span>
 
-<script type="text/javascript">
-	document.getElementById('bar').width
 
+<script type="text/javascript">
+window.onload = function(){
+	var barrio = document.getElementById('bar');
+	wid = window.windowWidth();
+	barrio.style.width = wid;
+	barrio.style.left = '0px';
+
+};
+	
 </script>
