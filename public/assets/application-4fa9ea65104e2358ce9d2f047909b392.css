@@ -1,0 +1,495 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*general*/
+
+body {
+	font-family: 'Orbitron';
+}
+
+hr {
+	border: 2px solid #343434;
+}
+
+a {
+	text-decoration: none;
+	color: #22FF22;
+}
+
+a {
+	font-family: 'Orbitron';
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+a:visited {
+	color: #22FF22;
+}
+
+div {
+	border-radius: 7px;
+}
+
+/*widths heights*/
+
+.P1pt5 {
+	padding: 1.5%;
+}
+
+.P2 {
+	padding: 2%;
+}
+
+.W5 {
+	min-width: 5%;
+	width: 5%;
+	max-width: 5%;
+}
+
+.W10 {
+	min-width: 10%;
+	width: 10%;
+	max-width: 10%;
+}
+
+.W15 {
+	min-width: 15%;
+	width: 15%;
+	max-width: 15%;
+}
+
+.W20 {
+	min-width: 20%;
+	width: 20%;
+	max-width: 20%;
+}
+
+.W25 {
+	min-width: 25%;
+	width: 25%;
+	max-width: 25%;
+}
+
+.W30 {
+	min-width: 30%;
+	width: 30%;
+	max-width: 30%;
+}
+.W33 {
+	min-width: 33%;
+	width: 33%;
+	max-width: 33%;
+}
+
+.W35 {
+	min-width: 35%;
+	width: 35%;
+	max-width: 35%;
+}
+
+.W40 {
+	min-width: 40%;
+	width: 40%;
+	max-width: 40%;
+}
+
+.W45 {
+	min-width: 45%;
+	width: 45%;
+	max-width: 45%;
+}
+
+.W50 {
+	min-width: 50%;
+	width: 50%;
+	max-width: 50%;
+}
+
+.W60 {
+	min-width: 60%;
+	width: 60%;
+	max-width: 60%;
+}
+
+.W70 {
+	min-width: 70%;
+	width: 70%;
+	max-width: 70%;
+}
+.W75 {
+	min-width: 75%;
+	width: 75%;
+	max-width: 75%;
+}
+
+.W80 {
+	min-width: 80%;
+	width: 80%;
+	max-width: 80%;
+}
+
+.W85 {
+	min-width: 85%;
+	width: 85%;
+	max-width: 85%;
+}
+
+.W90 {
+	min-width: 90%;
+	width: 90%;
+	max-width: 90%;
+}
+
+.W100 {
+	min-width: 100%;
+	width: 100%;
+	max-width: 100%;
+}
+
+.H50 {
+	min-height: 50%;
+	height: 50%;
+	max-height: 50%;
+}
+
+.H100 {
+	min-height: 100%;
+	height: 100%;
+	max-height: 100%;
+}
+
+/* pos */
+
+.overf {
+	overflow: hidden;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.center {
+	margin-left: 0 auto;
+	margin-right: 0 auto;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.vert {
+	vertical-align: middle;
+	line-height: 1.3em;
+}
+
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+
+.minH {
+	min-width: 1px;
+	min-height: 1px;
+}
+
+.minH20 {
+	min-height: 20px;
+}
+
+.minH100 {
+	min-height: 200px
+}
+
+.minH300 {
+	min-height: 300px
+	height: 300px;
+}
+
+.H100 {
+	min-height: 1em;
+}
+
+.MH100 {
+	max-height: 50px;
+}
+
+.up20 {
+	top: -20px;
+}
+
+.up16 {
+	top: -16px;
+}
+
+
+.bl {
+	display: block;
+}
+
+.inb {
+	display: inline-block !important;
+}
+
+.in {
+	display: inline !important;
+}
+
+.rel {
+	position: relative;
+}
+
+.abs {
+	position: absolute;
+}
+
+/*opacity*/
+
+.o20 {
+	opacity: .2;
+}
+
+/* colors */
+
+body {
+	background-color: #000000;
+}
+
+.black {
+	color: #000000;
+}
+
+.white {
+	color: #FFFFFF;
+}
+
+.tan {
+	color: #888888;
+}
+
+.lttan {
+	color: #333333;
+}
+
+.Bblack {
+	background-color: #000000;
+}
+
+.Btan {
+	background-color: #888888;
+}
+
+.Blttan {
+	background-color: #333333;
+}
+
+.Bblob {
+	background-color: #FFFF22;
+}
+
+a:hover.Bblobdiv {
+	background-color: #FF0000;
+}
+
+.Byell {
+	background-color: #DDDDDD;
+}
+
+.Bgray {
+	background-color: #BBBBBB;
+}
+
+.Bwhite {
+	background-color: #FFFFFF;
+}
+
+.Bgreen {
+	background-color: #FFDD22;
+}
+
+/*fonts*/
+
+.fSig {
+	font-family: 'Orbitron'
+}
+
+.fBodies {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.font8 {
+	font-size: 8px;
+}
+
+.font10 {
+	font-size: 10px;
+}
+
+.font12 {
+	font-size: 12px;
+}
+
+.font18 {
+	font-size: 18px;
+}
+
+.font24 {
+	font-size: 24px;
+}
+
+.font32 {
+	font-size: 32px;
+}
+
+.font48 {
+	font-size: 48px;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+/* pad marg */
+
+.pad0 {
+	margin: -12px !important;
+}
+
+.pad05 {
+	padding: 0.5%;
+}
+
+.pad2 {
+	padding: 2%;
+}
+
+.pad5 {
+	padding: 5%;
+}
+
+.npad5 {
+	padding: -5%;
+}
+
+.marg0 {
+	margin: 0px;
+}
+
+.mar10LR {
+	margin-left: 10%;
+	margin-right: 10%;
+}
+
+/*border*/
+
+.bord {
+	border: 4px solid #EEEEEE;
+}
+.bordBlack {
+	border: 4px solid #000000;
+}
+
+.bordBlackT {
+	border: 6px solid #000000;
+}
+
+/* specifics */
+
+a.blob {
+	border: 2px solid;
+	border-radius: 16px;
+	background-color: #FFFF22;
+	color: #000000;
+}
+
+img.blob {
+	border-radius: 2px;
+}
+
+a:hover.blob  {
+	background-color: #FF0000;	
+}
+
+img:hover.blob {
+	background-color: #FF0000;	
+}
+
+.comButton {
+	text-decoration: none;
+}
+
+.belt {
+	
+	display: inline-block !important;
+
+	margin: -3px !important;
+	padding: 0px !important;
+}
+
+.beltline {
+	max-height: 10em;
+	line-height: 10em;
+}
