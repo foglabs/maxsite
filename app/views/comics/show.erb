@@ -1,13 +1,14 @@
-<span class="W75 minH in left white Btan">
+<span class="W70 minH in left white Btan bord">
 
-	<div id="bar" class="W100 minH20 Bblack up20 abs o20 ">
+	<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
 	</div>
 
 	<div class="W100 left">
-		<span class='left W15 in minH'>
+		<span class='left W10 in minH'>
 		</span>
 
-		<span class='left W70 in minH'>
+		<span class='left W80 in minH'>
+			<br>
 			<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
 
 			<div class="W100 in">
@@ -72,7 +73,7 @@
 			
 		</span>
 
-		<span class='left W15 in minH'>
+		<span class='left W10 in minH'>
 		</span>
 	</div>
 	
@@ -96,7 +97,7 @@
 			<%= render 'comments/new' %>
 	</div>
 	<div class='black W100'>
-	  <div class='bordBlackT'>
+	  <div class='bord'>
 			<%= render 'newsies/index' %>
 
 		</div>
@@ -106,14 +107,7 @@
 
 </span>
 
-
 <script type="text/javascript">
-window.onload = function(){
-	var barrio = document.getElementById('bar');
-	wid = window.windowWidth();
-	barrio.style.width = wid;
-	barrio.style.left = '0px';
+	document.getElementById('bar').width
 
-};
-	
 </script>

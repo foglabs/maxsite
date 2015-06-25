@@ -5,6 +5,6 @@
       <%=  f.label :body, 'Comment'  %>
       <%= f.text_field :body %>
       <%= f.hidden_field :comic_id, value: @comic.id %>
-      <%= f.submit %>
+      <%= f.submit("Post") %>
     <% end %>
 </div>

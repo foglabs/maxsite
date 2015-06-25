@@ -7,7 +7,7 @@ class ComicsController < ApplicationController
 # login
 	def errybody
 		@sess = Session.where(code: request.remote_ip).first
-		@news = Newsie.last(10)
+		@news = Newsie.order('created_at desc').last(10)
 		@tags = Tag.all
 	end
 

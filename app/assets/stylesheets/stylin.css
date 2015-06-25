@@ -88,6 +88,18 @@ div {
 	padding: 2%;
 }
 
+.W1 {
+	min-width: 1%;
+	width: 1%;
+	max-width: 1%;
+}
+
+.W4 {
+	min-width: 4%;
+	width: 4%;
+	max-width: 4%;
+}
+
 .W5 {
 	min-width: 5%;
 	width: 5%;
@@ -153,10 +165,22 @@ div {
 	max-width: 50%;
 }
 
+.W55 {
+	min-width: 55%;
+	width: 55%;
+	max-width: 55%;
+}
+
 .W60 {
 	min-width: 60%;
 	width: 60%;
 	max-width: 60%;
+}
+
+.W65 {
+	min-width: 65%;
+	width: 65%;
+	max-width: 65%;
 }
 
 .W70 {
@@ -234,6 +258,11 @@ div {
 
 .right {
 	float: right;
+}
+
+.W100p {
+	width: 100px;
+	height: 100px;
 }
 
 .minH {
@@ -429,6 +458,10 @@ a:hover.Bblobdiv {
 }
 
 /*border*/
+
+.round {
+	border-radius: 12px;
+}
 
 .bord {
 	border: 4px solid #EEEEEE;
