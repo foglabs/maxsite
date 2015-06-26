@@ -260,8 +260,40 @@ div {
 	float: right;
 }
 
-.W100p {
-	width: 100px;
+.beltw1 {
+	min-width: 0px;
+	max-width: 113px;
+}
+
+.beltw2 {
+	min-width: 0px;
+	max-width: 64px;
+}
+
+.beltw3 {
+	min-width: 0px;
+	max-width: 157px;
+}
+
+.beltw4 {
+	min-width: 0px;
+	max-width: 67px;
+}
+
+.beltw5 {
+	min-width: 0px;
+	max-width: 99px;
+}
+
+.MW100p {
+	max-width: 113px;
+}
+
+.W300p {
+	width: 300px;
+}
+
+.H100p {
 	height: 100px;
 }
 
@@ -444,6 +476,10 @@ a:hover.Bblobdiv {
 	padding: 5%;
 }
 
+.pad10 {
+	padding: 10%;
+}
+
 .npad5 {
 	padding: -5%;
 }
@@ -485,6 +521,10 @@ a.blob {
 
 img.blob {
 	border-radius: 2px;
+}
+
+img {
+	max-width: 100%;
 }
 
 a:hover.blob  {

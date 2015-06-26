@@ -4,11 +4,7 @@
 			<%= f.label :title, "Title" %>
 			<%= f.text_field :title %>
 		</span>
-		<br>
-		<span class='Byell black pad05'>
-			<%= f.label :desc, "Desc" %>
-			<%= f.text_area :desc %>
-		</span>
+
 		<br>
 
 		<span class='Byell black pad05'>
@@ -21,6 +17,16 @@
 			<%= f.text_field :position  %>
 		</span>
 		<br>
-		<%= f.submit "Post"  %>
+		<span class='Byell bl black pad5'>
+			<%= f.label :desc, "Description" %>
+			<%= f.text_area :desc, {class: 'pad5 W300p H100p'} %>
+		</span>
+
+		<br>
+		<br>
+    <span class='Byell black pad05'>
+
+			<%= f.submit "Post"  %>
+		</span>
 	<% end %>
 </span>

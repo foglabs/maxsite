@@ -6,11 +6,14 @@
     </span>
     <br>
     
-    <span class='Byell black pad05'>
+    <span class='Byell black pad5 bl'>
       <%= f.label :body, "Body" %>
-      <%= f.text_field :body %>
+      <br>
+      <%= f.text_field :body, {class: 'W300p H100p pad5'} %>
     </span>
     <br>
-    <%= f.submit "Post"  %>
+    <span class='Byell black pad05'>
+      <%= f.submit "Post"  %>
+    </span>
   <% end %>
 </span>
