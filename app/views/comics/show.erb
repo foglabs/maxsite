@@ -1,111 +1,109 @@
-<span class="W70 minH in left white Btan bord">
 
-	<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
-	</div>
+<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
+</div>
 
-	<div class="W100 left">
-		<span class='left W10 in minH'>
-		</span>
+<div class="W100 left">
+	<span class='left W10 in minH'>
+	</span>
 
-		<span class='left W80 in minH'>
-			<br>
-			<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
+	<span class='left W80 in minH'>
+		<br>
+		<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
 
-			<div class="W100 in">
+		<div class="W100 in">
 
-				<span class="W20 left minH in nowrap"></span>
-				<span class="W60 left minH in nowrap beltline">
+			<span class="W20 left minH in nowrap"></span>
+			<span class="W60 left minH in nowrap beltline">
 
-					<div class='W100 rel minH100'>
-						<span class='abs up16'>
+				<div class='W100 rel minH100'>
+					<span class='abs up16'>
 
-							<% if a = @comic.lastcom %>
-								<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
-							<% else %>
-								<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
-							<% end %>
-
-							<% if a = @comic.lastcom %>
-								<%= link_to image_tag('/assets/b2.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
-							<% else %>
-								<%= image_tag('/assets/b2.png', {class: 'in belt' }) %>
-							<% end %>
-
-
-							<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
-
-							<% if b = @comic.nextcom %>
-								<%= link_to image_tag('/assets/b4.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
-							<% else %>
-								<%= image_tag('/assets/b4.png', {class: 'in belt'}) %>
-							<% end %>
-
-							<% if b = @comic.nextcom %>
-								<%= link_to image_tag('/assets/b5.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
-							<% else %>
-								<%= image_tag('/assets/b5.png', {class: 'in belt'}) %>
-							<% end %>
-
-						</span>
-
-					</div>
-
-				</span>
-				<span class="W20 left minH in nowrap"></span>
-
-			</div>
-
-			<% unless @taggy.empty? %>
-				<div class='W100 in'>
-
-					<span class="W5 left minH in"></span>
-
-					<span class="W90 left minH in">
-						<% @taggy.each do |tag| %>
-								<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
+						<% if a = @comic.lastcom %>
+							<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
 						<% end %>
+
+						<% if a = @comic.lastcom %>
+							<%= link_to image_tag('/assets/b2.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b2.png', {class: 'in belt' }) %>
+						<% end %>
+
+
+						<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
+
+						<% if b = @comic.nextcom %>
+							<%= link_to image_tag('/assets/b4.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b4.png', {class: 'in belt'}) %>
+						<% end %>
+
+						<% if b = @comic.nextcom %>
+							<%= link_to image_tag('/assets/b5.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
+						<% else %>
+							<%= image_tag('/assets/b5.png', {class: 'in belt'}) %>
+						<% end %>
+
 					</span>
 
-					<span class="W5 left minH in"></span>
 				</div>
 
-			<% end %>
-			
-		</span>
-
-		<span class='left W10 in minH'>
-		</span>
-	</div>
-	
-	<br>
-
-	<div class='black W100'>
-
-	  <span class='W5 minH left'></span>
-
-	  <span class='W90 minH left'>
-			<%= render 'comments/show' %>
-			<br>
-			<br>
-
-		</span>
-
-	  <span class='W5 minH left'></span>
-
-	</div>
-	<div class='black W100'>
-			<%= render 'comments/new' %>
-	</div>
-	<div class='black W100'>
-	  <div class='bord'>
-			<%= render 'newsies/index' %>
+			</span>
+			<span class="W20 left minH in nowrap"></span>
 
 		</div>
+
+		<% unless @taggy.empty? %>
+			<div class='W100 in'>
+
+				<span class="W5 left minH in"></span>
+
+				<span class="W90 left minH in">
+					<% @taggy.each do |tag| %>
+							<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
+					<% end %>
+				</span>
+
+				<span class="W5 left minH in"></span>
+			</div>
+
+		<% end %>
+
+	</span>
+
+	<span class='left W10 in minH'>
+	</span>
+</div>
+
+<br>
+
+<div class='black W100'>
+
+  <span class='W5 minH left'></span>
+
+  <span class='W90 minH left'>
+		<%= render 'comments/show' %>
+		<br>
+		<br>
+
+	</span>
+
+  <span class='W5 minH left'></span>
+
+</div>
+<div class='black W100'>
+		<%= render 'comments/new' %>
+</div>
+<div class='black W100'>
+  <div class='bord'>
+		<%= render 'newsies/index' %>
+
 	</div>
+</div>
 
-	<br>
+<br>
 
-</span>
 
 <script type="text/javascript">
 	document.getElementById('bar').width

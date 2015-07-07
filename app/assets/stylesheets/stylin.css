@@ -106,10 +106,28 @@ div {
 	max-width: 5%;
 }
 
+.W9 {
+	min-width: 9%;
+	width: 9%;
+	max-width: 9%;
+}
+
 .W10 {
 	min-width: 10%;
 	width: 10%;
 	max-width: 10%;
+}
+
+.W12 {
+	min-width: 12%;
+	width: 12%;
+	max-width: 12%;
+}
+
+.W14 {
+	min-width: 14%;
+	width: 14%;
+	max-width: 14%;
 }
 
 .W15 {
@@ -330,7 +348,6 @@ div {
 .up16 {
 	top: -16px;
 }
-
 
 .bl {
 	display: block;

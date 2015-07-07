@@ -11,29 +11,35 @@
 <body>
 
 	<div class='W100 left Bblack nowrap'>
-		<span class="W5 minH in left"> </span>
+		<span class="W10 minH in left"> </span>
 
-		<span class="W50 in Bblob">
-			<%= link_to image_tag('/assets/header.png', {class: 'W40 blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
+		<span class="<%= @sess ? 'W30' : 'W30' %> left in Bblob">
+			<%= link_to image_tag('/assets/header.png', {class: 'blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
 		</span>
+		<span class="W1 in minH left"></span>
 
-		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob W10 bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
-		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob W10 bordBlack'}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+		<span class="W1 in minH left"></span>
+		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob bordBlack'}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+		<span class="W1 in minH left"></span>
 		
-		<span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob W10 bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+		<span class="W1 in minH left"></span>
 
 	  <% if @sess %>
-			<span class="W10 in"><%= link_to "◊", admin_comics_path, {class: 'blob Bblob font12 white pad2'} %></span>
-			<span class="W10 in"><%= link_to "Exit", logout_comics_path(@sess), {class: 'blob Bblob font12 white pad2'} %></span>
+			<span class="W5 left vert H100"><%= link_to "◊", admin_comics_path, {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
+			<span class="W1 in minH left"></span>
+
+			<span class="W5 left vert H100"><%= link_to "Exit", logout_comics_path(@sess), {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
 	  <% end %>
 
-		<span class="W5 in minH"></span>
+		<span class="<%= @sess ? 'W9' : 'W14' %> in minH left"></span>
 
 	</div>
 
 	<div class='W100 left Bblack'>
 
-		<span class="W5 minH in left">
+		<span class="W10 minH in left">
 		</span>
 
 		<span class="W20 minH in left Blttan">
@@ -51,10 +57,13 @@
 				<span class'in white left'><%= render 'tags/index' %></span>
 			</div>
 		</span>
+		
+		<span class="W60 minH in left white Btan bord">
+			<%= yield %>
+		</span>
 
-		<%= yield %>
 
-		<span class="W20 minH in left">
+		<span class="W25 minH in left">
 		</span>
 	</div>
 
