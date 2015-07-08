@@ -11,6 +11,7 @@ Maxsite::Application.routes.draw do
       get 'storysofar'
       get 'closeencounters'
       get 'contax'
+      
     end
   end
   resources :comments

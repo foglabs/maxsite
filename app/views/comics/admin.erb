@@ -8,7 +8,7 @@
         
         <%= link_to image_tag(a.image.url, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
         
-        <div class='Bblack pad05 in'><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'blob pad05' %></div>
+        <div class='Bblack pad05 in'><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'blob pad05' %> <%= link_to 'EDIT', edit_comic_path(a), class: 'blob ' %></div>
       </div>
       <br>
       <br>

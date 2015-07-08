@@ -45,7 +45,7 @@ class ComicsController < ApplicationController
 	end
 # 
 
-	def storysofar
+	def storysofar	
 		@comm = Comment.new
 		@comms = Comment.where(comic_id: params[:id])
 		@tag = Tag.new
@@ -88,6 +88,26 @@ class ComicsController < ApplicationController
 
 	def new
 		@comic = Comic.new
+	end
+
+	def edit
+		unless @sess.try(:check)
+			redirect_to comics_path
+		else
+
+
+	  	@comic = Comic.find(params[:id])
+		end
+	end
+
+	def update
+	  @comic = Comic.find(params[:id])
+
+	  if @comic.update(comic_params)
+	    redirect_to admin_comics_path
+	  else
+	    render('edit')
+	  end
 	end
 
 	def destroy

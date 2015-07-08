@@ -1,0 +1,31 @@
+<span class="blob Bblob white bl pad5">
+	<%= form_for @comic, multipart: true do |f| %>
+		<span class='Byell black pad05'>
+			<%= f.label :title, "Title" %>
+			<%= f.text_field :title %>
+		</span>
+
+		<br>
+
+		<span class='Byell black pad05'>
+			<%= image_tag(@comic.image.url, {class: 'W20 Blttan'})  %>
+		</span>
+		<br>
+		<span class='Byell black pad05'>
+			<%= f.label :position, "Position" %>
+			<%= f.text_field :position %>
+		</span>
+		<br>
+		<span class='Byell bl black pad5'>
+			<%= f.label :desc, "Description" %>
+			<%= f.text_area :desc, {class: 'pad5 W300p H100p'} %>
+		</span>
+
+		<br>
+		<br>
+    <span class='Byell black pad05'>
+
+			<%= f.submit "Post"  %>
+		</span>
+	<% end %>
+</span>
