@@ -9,13 +9,13 @@
 	<span class='left W80 in minH'>
 		<br>
 		<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
+		<br>
+		<span class="W90 Bblack white bl pad5"><%= @comic.desc %></span>
 
 		<div class="W100 in">
 
 			<span class="W20 left minH in nowrap"></span>
 			<span class="W60   minH in nowrap beltline">
-
-
 						<% if a = @comic.lastcom %>
 							<%= link_to image_tag('/assets/b1.png', {class: 'in belt W100 beltw1'}), comic_path( a ), {class: 'in '} %>
 						<% else %>
@@ -43,11 +43,11 @@
 							<%= image_tag('/assets/b5.png', {class: 'in belt W100 beltw5'}) %>
 						<% end %>
 
-
 			</span>
 			<span class="W20 left minH in nowrap"></span>
 
 		</div>
+
 
 		<% unless @taggy.empty? %>
 			<div class='W100 in'>
