@@ -4,7 +4,7 @@
 
     <% @comics.each do |a| %>
       <div class='Btan inb'>
-        <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05'><%= a.title %>::</span><span class='Byell pad05'><%= a.desc %></span>
+        <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05'><%= a.title %>::</span><span class='Byell '><%= a.desc %></span>
         
         <%= link_to image_tag(a.image.url, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
         

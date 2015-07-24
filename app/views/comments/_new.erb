@@ -1,10 +1,10 @@
-  <div class='blob bordBlack Bgray inb pad05 W100'>
-    <%= form_for @comm do |f| %>
-      <%=  f.label :name, 'Name'  %>
-      <%= f.text_field :name %>
-      <%=  f.label :body, 'Comment'  %>
-      <%= f.text_field :body %>
-      <%= f.hidden_field :comic_id, value: @comic.id %>
-      <%= f.submit("Post") %>
-    <% end %>
+<div class='blob bordBlack  inb pad05 W100'>
+  <%= form_for @comm do |f| %>
+    <%=  f.label :name, 'Name'  %>
+    <%= f.text_field :name %>
+    <%=  f.label :body, 'Comment'  %>
+    <%= f.text_field :body %>
+    <%= f.hidden_field :comic_id, value: @comic.id %>
+    <%= f.submit("Post") %>
+  <% end %>
 </div>
