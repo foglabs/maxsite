@@ -17,11 +17,18 @@
 
         <img id="" usemap="belt" src="/assets/belt.png" class="W100" />
         <map name="belt" >
-        <area  alt="" title="" href="<%= "/comics/#{  @a.try(:id).try(:to_s)}" %>" shape="rect" coords="0,0,92,165" style="outline:none;" target="_self"     />
-        <area  alt="" title="" href="<%= "/comics/#{  @a.try(:id).try(:to_s)}" %>" shape="rect" coords="93,0,156,165" style="outline:none;" target="_self"     />
-        <area  alt="" title="" href="<%= "/comics/#{  @b.try(:id).try(:to_s)}" %>" shape="rect" coords="312,0,372,165" style="outline:none;" target="_self"     />
-        <area  alt="" title="" href="<%= "/comics/#{  @b.try(:id).try(:to_s)}" %>" shape="rect" coords="378,0,465,165" style="outline:none;" target="_self"     />
-        <area shape="rect" coords="463,163,465,165" alt="Image Map" style="outline:none;" title="Image Map" href="#" />
+
+        <% if @a %>
+          <area  alt="" title="" href="<%= "/comics/#{  @a.id }" %>" shape="rect" coords="0,0,92,165" style="outline:none;" target="_self"     />
+          <area  alt="" title="" href="<%= "/comics/#{  @a.id }" %>" shape="rect" coords="93,0,156,165" style="outline:none;" target="_self"     />
+        <% end %>
+
+        <% if @b %>
+          <area  alt="" title="" href="<%= "/comics/#{  @b.id }" %>" shape="rect" coords="312,0,372,165" style="outline:none;" target="_self"     />
+          <area  alt="" title="" href="<%= "/comics/#{  @b.id }" %>" shape="rect" coords="378,0,465,165" style="outline:none;" target="_self"     />
+        <% end %>
+
+        <area shape="rect" coords="463,163,465,165" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
         </map>
 			</span>
 			<span class="W5 left minH in left "></span>
