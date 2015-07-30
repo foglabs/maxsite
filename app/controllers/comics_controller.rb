@@ -63,8 +63,8 @@ class ComicsController < ApplicationController
 			# @taggy = []
 			# ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
 
-			@a = @comic.lastcom || "#"
-			@b = @comic.nextcom	|| "#"
+			@a = @comic.lastcom
+			@b = @comic.nextcom
 		end
 	end
 

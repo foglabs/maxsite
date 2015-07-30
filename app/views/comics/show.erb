@@ -1,4 +1,3 @@
-
 <div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
 </div>
 
@@ -12,98 +11,91 @@
 
 		<div class="W100 in">
 
-			<span class="W20 left minH in nowrap"></span>
-			<span class="W60 left minH in nowrap beltline">
-
-				<div class='W100 rel minH100'>
-					<span class='abs up16'>
-
-						<% if a = @comic.lastcom %>
-							<%= link_to image_tag('/assets/b1.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
-						<% else %>
-							<%= image_tag('/assets/b1.png', {class: 'in belt' }) %>
-						<% end %>
-
-						<% if a = @comic.lastcom %>
-							<%= link_to image_tag('/assets/b2.png', {class: 'in belt'}), comic_path( a ), {class: 'in '} %>
-						<% else %>
-							<%= image_tag('/assets/b2.png', {class: 'in belt' }) %>
-						<% end %>
+			<span class="W5 left minH in left "></span>
+			<span class="W90 minH in left  ">
 
 
-						<%= image_tag('/assets/b3.png', {class: 'in belt'}) %>
-
-						<% if b = @comic.nextcom %>
-							<%= link_to image_tag('/assets/b4.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
-						<% else %>
-							<%= image_tag('/assets/b4.png', {class: 'in belt'}) %>
-						<% end %>
-
-						<% if b = @comic.nextcom %>
-							<%= link_to image_tag('/assets/b5.png', {class: 'in belt'}), comic_path( b ), {class: 'in '} %>
-						<% else %>
-							<%= image_tag('/assets/b5.png', {class: 'in belt'}) %>
-						<% end %>
-
-					</span>
-
-				</div>
-
+        <img id="" usemap="belt" src="/assets/belt.png" class="W100" />
+        <map name="belt" id="ImageMapsCom-image-maps-2015-07-29-195705">
+        <area  alt="" title="" href="/comics/<%= @a.try(:id) || "#" %>" shape="rect" coords="0,0,92,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="/comics/<%= @a.try(:id) || "#" %>" shape="rect" coords="93,0,156,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="#" shape="rect" coords="170,0,295,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="/comics/<%= @b.try(:id) || "#" %>" shape="rect" coords="312,0,372,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="/comics/<%= @b.try(:id) || "#" %>" shape="rect" coords="378,0,465,165" style="outline:none;" target="_self"     />
+        <area shape="rect" coords="463,163,465,165" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+        </map>
 			</span>
-			<span class="W20 left minH in nowrap"></span>
+			<span class="W5 left minH in left "></span>
 
 		</div>
-
-		<% unless @taggy.empty? %>
-			<div class='W100 in'>
-
-				<span class="W5 left minH in"></span>
-
-				<span class="W90 left minH in">
-					<% @taggy.each do |tag| %>
-							<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
-					<% end %>
-				</span>
-
-				<span class="W5 left minH in"></span>
-			</div>
-
-		<% end %>
-
 	</span>
 
 	<span class='left W10 in minH'>
 	</span>
 </div>
 
-<br>
+<div class='black W100'>
+  <div class="W100">
+    <div class='P1pt5'>
+      <h1 class="bold black font18 pad05"></h1>
+    </div>
+  </div>
+
+</div>
+
+<div class='black W100'>
+  <div class='bord'>
+
+		<div class="W100">
+		  <div class='lttan Bltan'>
+		    <span class="P1pt5 W90 inb round Bwhite"><h1 class="pad05 bold black font18  in"><%= @comic.title %></h1> <h2 class="in font10"><%= @comic.format_time %></h2></span>
+		  </div>
+		</div>
+		<div class="W100">
+		  <div class='P2 lttan white'>
+		    <span class="white fBodies pad05"><%= @comic.desc %></span><br>
+		    <hr>
+		    <span class="white font10"></span>
+		  </div>
+		</div>
+
+		<%= render 'newsies/index' %>
+
+	</div>
+</div>
 
 <div class='black W100'>
 
   <span class='W5 minH left'></span>
 
   <span class='W90 minH left'>
-		<%= render 'comments/show' %>
-		<br>
-		<br>
-
-	</span>
+  </span>
 
   <span class='W5 minH left'></span>
-
-</div>
-<div class='black W100'>
-		<%= render 'comments/new' %>
-</div>
-<div class='black W100'>
-  <div class='bord'>
-		<%= render 'newsies/index' %>
-
-	</div>
 </div>
 
 <br>
+<div class='black W100'>
 
+  <span class='W5 minH left'></span>
+
+  <span class='W90 minH left'>
+    <%= render 'comments/new' %>
+  </span>
+
+  <span class='W5 minH left'></span>
+</div>
+
+<div class='black W100'>
+
+  <span class='W5 minH left'></span>
+
+  <span class='W90 minH left'>
+    <%= render 'comments/show' %>
+  </span>
+
+  <span class='W5 minH left'></span>
+</div>
 
 <script type="text/javascript">
 	document.getElementById('bar').width
