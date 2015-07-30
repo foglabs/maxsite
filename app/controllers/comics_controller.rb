@@ -60,8 +60,11 @@ class ComicsController < ApplicationController
 			@comms = Comment.where(comic_id: @comic.id)
 			@comm = Comment.new
 
-			@taggy = []
-			ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
+			# @taggy = []
+			# ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
+
+			@a = @comic.lastcom || "#"
+			@b = @comic.nextcom	|| "#"
 		end
 	end
 

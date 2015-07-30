@@ -258,6 +258,10 @@ div {
 	white-space: nowrap;
 }
 
+.break {
+	word-wrap: break-word;
+}
+
 .center {
 	margin-left: 0 auto;
 	margin-right: 0 auto;

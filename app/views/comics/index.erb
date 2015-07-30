@@ -8,58 +8,26 @@
 	<span class='left W80 in minH'>
 		<br>
 		<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
-		<br>
 
 		<div class="W100 in">
 
-			<span class="W20 left minH in nowrap"></span>
-			<span class="W60   minH in nowrap ">
-				<% if a = @comic.lastcom %>
-					<%= link_to image_tag('/assets/b1.png', {class: 'in belt W100 beltw1'}), comic_path( a ), {class: 'in '} %>
-				<% else %>
-					<%= image_tag('/assets/b1.png', {class: 'in belt W100 beltw1' }) %>
-				<% end %>
+			<span class="W5 left minH in left "></span>
+			<span class="W90 minH in left  ">
 
-				<% if a = @comic.lastcom %>
-					<%= link_to image_tag('/assets/b2.png', {class: 'in belt W100 beltw2'}), comic_path( a ), {class: 'in '} %>
-				<% else %>
-					<%= image_tag('/assets/b2.png', {class: 'in belt W100 beltw2' }) %>
-				<% end %>
 
-				<%= image_tag('/assets/b3.png', {class: 'in belt W100 beltw3'}) %>
-
-				<% if b = @comic.nextcom %>
-					<%= link_to image_tag('/assets/b4.png', {class: 'in belt W100 beltw4'}), comic_path( b ), {class: 'in '} %>
-				<% else %>
-					<%= image_tag('/assets/b4.png', {class: 'in belt W100 beltw4'}) %>
-				<% end %>
-
-				<% if b = @comic.nextcom %>
-					<%= link_to image_tag('/assets/b5.png', {class: 'in belt W100 beltw5'}), comic_path( b ), {class: 'in '} %>
-				<% else %>
-					<%= image_tag('/assets/b5.png', {class: 'in belt W100 beltw5'}) %>
-				<% end %>
-
+        <img id="" usemap="belt" src="/assets/belt.png" class="W100" />
+        <map name="belt" id="ImageMapsCom-image-maps-2015-07-29-195705">
+        <area  alt="" title="" href="<%= comic_path( @a ) %>" shape="rect" coords="0,0,92,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="<%= comic_path( @a ) %>" shape="rect" coords="93,0,156,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="/" shape="rect" coords="170,0,295,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="<%= comic_path( @b ) %>" shape="rect" coords="312,0,372,165" style="outline:none;" target="_self"     />
+        <area  alt="" title="" href="<%= comic_path( @b ) %>" shape="rect" coords="378,0,465,165" style="outline:none;" target="_self"     />
+        <area shape="rect" coords="463,163,465,165" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0" />
+        </map>
 			</span>
-			<span class="W20 left minH in nowrap"></span>
+			<span class="W5 left minH in left "></span>
 
 		</div>
-
-		<% unless @taggy.empty? %>
-			<div class='W100 in'>
-
-				<span class="W5 left minH in"></span>
-
-				<span class="W90 left minH in">
-					<% @taggy.each do |tag| %>
-							<%= link_to tag.word, tag_path(tag), {class: 'left pad05 Bblob blob in'} %>
-					<% end %>
-				</span>
-
-				<span class="W5 left minH in"></span>
-			</div>
-		<% end %> 
-		
 	</span>
 
 	<span class='left W10 in minH'>

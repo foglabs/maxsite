@@ -3,14 +3,28 @@
     <h1 class='white Bblack pad2'>COMICS</h1>
 
     <% @comics.each do |a| %>
-      <div class='Btan inb'>
-        <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05'><%= a.title %>::</span><span class='Byell '><%= a.desc %></span>
-        
-        <%= link_to image_tag(a.image.url, {class: 'W5'}), comic_path(a), class: 'blob pad05' %>
-        
-        <div class='Bblack pad05 in'><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'blob pad05' %> <%= link_to 'EDIT', edit_comic_path(a), class: 'blob ' %></div>
+
+
+    <br>
+    <div class="W100 left bord">
+      <div class='Btan W45 left in'>
+        <div>
+
+          <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05 break'><%= a.title %>::<span class-'right'>  <%= link_to image_tag(a.image.url, {class: 'W10'}), comic_path(a), class: 'Bblob round bord black pad05 ' %> </span></span>
+
+        </div>
+
+        <div class='Bblack pad05 in left W5'>
+          <span class="Bblob round bord black pad05 left"><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'Bblob left round bord black pad05 ' %></span> <span class="left"><%= link_to 'EDIT', edit_comic_path(a), class: 'Bblob round bord black ' %></span>
+        </div>
+
+
       </div>
+
+      <div class="break left W45 pad2"><span class=' Byell'><%= a.desc %></span></div>
+    </div>
       <br>
+
       <br>
     <% end %>
 
