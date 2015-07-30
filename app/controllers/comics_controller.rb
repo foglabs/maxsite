@@ -72,12 +72,10 @@ class ComicsController < ApplicationController
 		# change to give appropriate news from displayed comic
 		@comm = Comment.new
 		@comms = Comment.where(comic_id: params[:id])
-		@comic_tag = ComicTag.new
 
  		@comic = Comic.find(params[:id])
-
- 		@taggy = []
-		ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
+		@a = @comic.lastcom
+		@b = @comic.nextcom
 	end
 
 	def create
