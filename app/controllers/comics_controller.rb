@@ -17,7 +17,7 @@ class ComicsController < ApplicationController
 
 	def logout
 		@sess = Session.where(code: request.remote_ip).first
-		@sess.destroy_all
+		Session.destroy_all
 		redirect_to comics_path
 	end
 
