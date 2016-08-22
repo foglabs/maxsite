@@ -21,6 +21,7 @@ class ComicsController < ApplicationController
 		redirect_to comics_path
 	end
 
+# backoffice!
 	def auth
 		@logging = params[:pass] ? Login.new(params[:pass]) : nil
 
@@ -44,8 +45,10 @@ class ComicsController < ApplicationController
 			@newsie = Newsie.new
 		end
 	end
-# 
 
+#####
+
+# static stuff!
 	def storysofar	
 		@comm = Comment.new
 		@comms = Comment.where(comic_id: params[:id])
@@ -67,6 +70,7 @@ class ComicsController < ApplicationController
 			@b = @comic.nextcom
 		end
 	end
+#####
 
 	def show
 		# change to give appropriate news from displayed comic

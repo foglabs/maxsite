@@ -19,6 +19,8 @@ Maxsite::Application.routes.draw do
   resources :tags do
     resources :comic_tags, only: [:new, :create, :destroy]
   end
+
+  resources :arcs, only: [:new, :create, :destroy]
   resources :newsies
 
   # The priority is based upon order of creation: first created -> highest priority.
