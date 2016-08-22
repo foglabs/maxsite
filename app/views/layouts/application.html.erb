@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -8,68 +9,69 @@
 	  <link href='https://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 	  <%= csrf_meta_tags %>
 	</head>
-<body>
+	
+	<body>
 
-	<div class='W100 left Bblack nowrap'>
-		<span class="W10 minH in left"> </span>
+		<div class='W100 left Bblack nowrap'>
+			<span class="W10 minH in left"> </span>
 
-		<span class="<%= @sess ? 'W30' : 'W30' %> left in Bblob">
-			<%= link_to image_tag('/assets/header.png', {class: 'blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
-		</span>
-		<span class="W1 in minH left"></span>
-
-		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
-		<span class="W1 in minH left"></span>
-		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob bordBlack'}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
-		<span class="W1 in minH left"></span>
-		
-		<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
-		<span class="W1 in minH left"></span>
-
-	  <% if @sess %>
-			<span class="W5 left vert H100"><%= link_to "◊", admin_comics_path, {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
+			<span class="<%= @sess ? 'W30' : 'W30' %> left in Bblob btn">
+				<%= link_to image_tag('/assets/header.png', {class: 'blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
+			</span>
 			<span class="W1 in minH left"></span>
 
-			<span class="W5 left vert H100"><%= link_to "Exit", logout_comics_path(@sess), {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
-	  <% end %>
+			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+			<span class="W1 in minH left"></span>
+			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob bordBlack'}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+			<span class="W1 in minH left"></span>
+			
+			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+			<span class="W1 in minH left"></span>
 
-		<span class="<%= @sess ? 'W9' : 'W14' %> in minH left"></span>
+		  <% if @sess %>
+				<span class="W5 left vert H100"><%= link_to "◊", admin_comics_path, {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
+				<span class="W1 in minH left"></span>
 
-	</div>
+				<span class="W5 left vert H100"><%= link_to "Exit", logout_comics_path(@sess), {class: 'left W100 blob Bblob font12 white pad2 H100'} %></span>
+		  <% end %>
 
-	<div class='W100 left Bblack'>
+			<span class="<%= @sess ? 'W9' : 'W14' %> in minH left"></span>
 
-		<span class="W10 minH in left">
-		</span>
+		</div>
 
-		<span class="W20 minH in left Blttan">
+		<div class='W100 left Bblack'>
 
-			<div class='W100 left Blttan'>
-				<a data-chrome="transparent" class="twitter-timeline" href="https://twitter.com/mayhemchampion" data-widget-id="588840829789274112">Tweets by @mayhemchampion</a>
-					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
-			</div>
+			<span class="W10 minH in left">
+			</span>
 
-		</span>
-		
-		<span class="W60 minH in left white Btan bord">
-			<%= yield %>
-		</span>
+			<span class="W20 minH in left Blttan">
 
-		<span class="W25 minH in left">
-		</span>
-	</div>
+				<div class='W100 left Blttan'>
+					<a data-chrome="transparent" class="twitter-timeline" href="https://twitter.com/mayhemchampion" data-widget-id="588840829789274112">Tweets by @mayhemchampion</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>	
+				</div>
 
-	<div class="W100 left Bblack">
+			</span>
+			
+			<span class="W60 minH in left white Btan bord">
+				<%= yield %>
+			</span>
+
 			<span class="W25 minH in left">
 			</span>
+		</div>
 
-			<span class="W70 minH in left black Btan">
-			</span>
+		<div class="W100 left Bblack">
+				<span class="W25 minH in left">
+				</span>
 
-			<span class="W5 minH in left">
-			</span>
+				<span class="W70 minH in left black Btan">
+				</span>
 
-	</div>
+				<span class="W5 minH in left">
+				</span>
 
-</body>
+		</div>
+
+	</body>
 </html>
