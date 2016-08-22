@@ -1,29 +1,39 @@
 <span class="blob Bblob white bl pad5">
 	<span class="W20">
 			<%= form_for @comic, multipart: true do |f| %>
-			<span class='Byell black pad05'>
+			<span class="Byell black pad05">
 				<%= f.label :title, "Title" %>
 				<%= f.text_field :title %>
 			</span>
 
-			<span class='Byell black bl pad05'>
+			<span class="Byell black bl pad05">
 				<%= f.label :image, "img" %>
-				<%= f.file_field :image %>
+				
+				<span class="pad5" id="<%= @cnt %>filebox">
+					
+				</span>
 			</span>
 			<br>
-			<span class='Byell black bl pad05'>
+			<span class="Byell black bl pad05">
 				<%= f.label :position, "Position" %>
 				<%= f.text_field :position  %>
 			</span>
-			<span class='Byell bl black bl pad05'>
+			<span class="Byell bl black bl pad05">
 				<%= f.label :desc, "Description" %>
-				<%= f.text_area :desc, {class: 'pad5'} %>
+				<%= f.text_area :desc, {class: "pad5"} %>
 			</span>
 
-	    <span class='Byell black pad05'>
+	    <span class="Byell black pad05">
 
 				<%= f.submit "Post"  %>
 			</span>
 		<% end %>
 	</span>
 </span>
+
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$(".<%= @cnt %>filebox").dropzone();
+	});
+</script>
