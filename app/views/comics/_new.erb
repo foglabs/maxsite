@@ -1,3 +1,5 @@
+<%= javascript_include_tag "dropzone" %>
+
 <span class="blob Bblob white bl pad5">
 	<span class="W20">
 			<%= form_for @comic, multipart: true do |f| %>
@@ -8,10 +10,7 @@
 
 			<span class="Byell black bl pad05">
 				<%= f.label :image, "img" %>
-				
-				<span class="pad5" id="<%= @cnt %>filebox">
-					
-				</span>
+
 			</span>
 			<br>
 			<span class="Byell black bl pad05">
@@ -28,12 +27,22 @@
 				<%= f.submit "Post"  %>
 			</span>
 		<% end %>
+
+		<%= form_tag('/comics/upload', method: :post, class: 'pad5 block Bblack', id: 'filebox', remote: true) %>
+
 	</span>
 </span>
 
 
 <script type="text/javascript">
+
+	var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
+
 	$(document).ready(function() {
-		$(".<%= @cnt %>filebox").dropzone();
+
+		$("#filebox").dropzone({params: {'authenticity_token':  AUTH_TOKEN }, url: '/comics/upload', success: function(file, resp) {
+			console.log(resp)
+			$('#filebox').removeClass('Bblack').addClass('Bwhite');
+		}});
 	});
 </script>

@@ -8,10 +8,11 @@ Maxsite::Application.routes.draw do
       get 'logout'
       post 'auth'
       get 'admin'
+      post 'upload'
+      
       get 'storysofar'
       get 'closeencounters'
       get 'contax'
-      
     end
   end
   resources :comments

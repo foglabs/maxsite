@@ -6,6 +6,8 @@ class ComicsController < ApplicationController
 
 # login
 	def errybody
+		binding.pry
+
 		@sess = Session.where(code: request.remote_ip).first
 		@news = Newsie.order('created_at desc').last(10)
 		@tags = Tag.all
@@ -44,6 +46,17 @@ class ComicsController < ApplicationController
 			@comic = Comic.new
 			@newsie = Newsie.new
 		end
+	end
+
+	def upload
+		binding.pry
+		params = ActionController::Parameters.new({comic: {image: params[:file]}})
+		# para.require(:comic).permit(:image)
+
+		@comic.create(img_params)
+
+		# render nothing: true, status: 200, body:
+		render json: {id: @comic.id}
 	end
 
 #####
@@ -101,7 +114,6 @@ class ComicsController < ApplicationController
 			redirect_to comics_path
 		else
 
-
 	  	@comic = Comic.find(params[:id])
 		end
 	end
@@ -125,5 +137,9 @@ class ComicsController < ApplicationController
 	private
 		def comic_params
 			params.require(:comic).permit(:title, :desc, :image, :position, comic_tag_attributes: [:comic_id, :tag_id])
+		end
+
+		def img_params
+			params.require(:comic).permit(:image)
 		end
 end
