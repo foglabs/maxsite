@@ -40,8 +40,9 @@
 
 	$(document).ready(function() {
 
-		$("#filebox").dropzone({params: {'authenticity_token':  AUTH_TOKEN }, url: '/comics/upload', success: function(file, resp) {
-			console.log(resp)
+		$("#filebox").dropzone({params: {'authenticity_token':  AUTH_TOKEN }, paramName: 'comic[image]', url: '/comics/upload', success: function(file, resp) {
+
+			$('.dz-success-mark, .dz-error-mark').hide();
 			$('#filebox').removeClass('Bblack').addClass('Bwhite');
 		}});
 	});
