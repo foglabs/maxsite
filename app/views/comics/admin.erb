@@ -1,14 +1,23 @@
 
 <span class='W100 in left'>
+  <span class="pad2 Blttan  bl">
+    <%= link_to "Add Comic", new_comic_comics_path, :remote => true %>
 
-  <span class="pad2 Bwhite minH12em bl">
+    <button id="mo-comic">asdfasdfasddfs</button>
+  </span>
+</span>
+
+<span class='W100 in left'>
+
+  <span class="pad2 Bwhite minH12em bl" id="the-comics">
       
     <div class=' inb Byell pad0  minH10em marg0 W80'>
-      <%= render 'comics/new' %>
+      <%= render 'comics/new_comic' %>
     </div>
 
     <div class=' inb Blttan pad0 minH10em marg0 W20'>
-      <span class="in W100"></span>
+      <span class="in W100 overf left pad5 white">
+      </span>
     </div>
   </span>
 </span>
@@ -62,5 +71,14 @@
     <% end %>
 
   </div>
-
 </span>
+
+
+<script type="text/javascript">
+  $('#mo-comic').click(function() {
+    $.get('<%= new_comic_comics_path %>', function(res, data){
+      console.log(data, res);
+    });
+  });
+
+</script>

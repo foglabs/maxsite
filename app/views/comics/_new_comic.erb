@@ -40,7 +40,6 @@
 	var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
 
 	$(document).ready(function() {
-
 		$("#filebox").dropzone({params: {'authenticity_token':  AUTH_TOKEN }, paramName: 'comic[image]', url: '/comics/upload', success: function(file, resp) {
 
 			$('.dz-success-mark, .dz-error-mark').hide();

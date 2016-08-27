@@ -9,6 +9,7 @@ Maxsite::Application.routes.draw do
       post 'auth'
       get 'admin'
       post 'upload'
+      get 'new_comic'
       
       get 'storysofar'
       get 'closeencounters'

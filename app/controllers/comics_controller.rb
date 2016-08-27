@@ -47,10 +47,18 @@ class ComicsController < ApplicationController
 	end
 
 	def upload
+		maxy = Comic.maximum(:position)
+		params[:comic][:position] = (Comic.maximum(:position) + 1)
 		@comic = Comic.create(comic_params)
-
-		# render nothing: true, status: 200, body:
 		render json: {id: @comic.id}
+	end
+
+	def new_comic
+		@comic = Comic.new
+
+	  respond_to do |format|               
+	    format.js
+	  end        
 	end
 
 #####
