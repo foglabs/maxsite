@@ -1,13 +1,22 @@
 
 <span class='W100 in left'>
-  <div class=' inb Byell W60'>
-    <%= render 'comics/new' %>
-  </div>
 
+  <span class="pad2 Bwhite minH12em bl">
+      
+    <div class=' inb Byell pad0  minH10em marg0 W80'>
+      <%= render 'comics/new' %>
+    </div>
+
+    <div class=' inb Blttan pad0 minH10em marg0 W20'>
+      <span class="in W100"></span>
+    </div>
+  </span>
 </span>
 
+<span style="width: 100%; min-height: 3.2em; height: 3.2em; display: block; float: left;"></span>
+
 <span class='W100 in left'>
-  <div class='pad5 inb Byell'>
+  <div class='pad5 bl Byell'>
     <h1 class='white Bblack pad2'>COMICS</h1>
 
     <% @comics.each do |a| %>

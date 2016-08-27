@@ -354,6 +354,16 @@ div {
 	max-height: 50px;
 }
 
+.minH10em {
+	min-height: 10em;
+	height: 10em;
+}
+
+.minH12em {
+	min-height: 12em;
+	height: 12em;
+}
+
 .up20 {
 	top: -20px;
 }
@@ -523,6 +533,11 @@ a:hover.Bblobdiv {
 	margin-right: 10%;
 }
 
+.mar2LR {
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
 /*border*/
 
 .round {
@@ -586,4 +601,17 @@ img:hover.blob {
 	line-height: 10em;
 }
 
+.goku {
+	min-height: 8em;
+	background: url('/assets/gokuload.gif') no-repeat ;
+	background-size: 12em 12em;
 
+}
+
+.z0 {
+	z-index: 0;
+}
+
+.z1 {
+	z-index: 1;
+}

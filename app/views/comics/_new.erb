@@ -1,37 +1,43 @@
 <%= javascript_include_tag "dropzone" %>
+ 
+<span class="W100 white bl minH10em">
 
-<span class=" white bl pad5">
-
-	<span class="W50 left pad0 ">
-		<span class='left Bblack W100' ><%= form_tag('/comics/upload', method: :post, id: 'filebox', remote: true) %></span>
-	</span>
-
-	<span class="W50 right pad0 ">
-			<%= form_for @comic, multipart: true do |f| %>
-			<span class="Byell left black pad5">
+	<span class="W50 left  ">
+			<%= form_for @comic, class: 'left bl W100 ', multipart: true do |f| %>
+			<span class="Blttan left white  W100 pad2">
 				<%= f.label :title, "Title" %>
-				<%= f.text_field :title %>
-			</span>
+				<%= f.text_field :title, { class: 'in mar2LR'}   %>
 
-			<span class="Byell left black pad5">
-				<%= f.label :image, "img" %>
-
-			</span>
-			<span class="Byell left black pad5">
 				<%= f.label :position, "Position" %>
-				<%= f.text_field :position  %>
-			</span>
-			<span class="Byell left black pad5">
-				<%= f.label :desc, "Description" %>
-				<%= f.text_area :desc, {class: "pad5"} %>
+				<%= f.text_field :position, { class: 'in'}  %>
 			</span>
 
-	    <span class="Byell left black pad5">
+			<span class="Btan left black  W100 pad2">
+
+			</span>
+			<span class="Btan left black  W100 pad2">
+				<%= f.label :desc, "Description" %>
+				<%= f.text_area :desc, {class: " W50  in"} %>
+			</span>
+
+	    <span class="Btan left black bl W100 pad2">
 
 				<%= f.submit "Post"  %>
 			</span>
 		<% end %>
 	</span>
+
+
+	<span class="W10 minH left inb  ">
+	</span>
+
+	<span class="W30  left pad0 marg0 ">
+		<span class=' left  W100   Blttan ' ><%= form_tag('/comics/upload', class: 'in minH W100 left goku', method: :post, id: 'filebox', remote: true) %></span>
+	</span>
+
+	<span class="W10 minH left inb pad0 marg0">
+	</span>
+
 </span>
 
 

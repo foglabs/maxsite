@@ -47,7 +47,6 @@ class ComicsController < ApplicationController
 	end
 
 	def upload
-		# para = ActionController::Parameters.new({comic: {image: params[:image]}})
 		@comic = Comic.create(comic_params)
 
 		# render nothing: true, status: 200, body:
