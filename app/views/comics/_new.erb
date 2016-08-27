@@ -1,35 +1,36 @@
 <%= javascript_include_tag "dropzone" %>
 
-<span class="blob Bblob white bl pad5">
-	<span class="W20">
+<span class=" white bl pad5">
+
+	<span class="W50 left pad0 ">
+		<span class='left Bblack W100' ><%= form_tag('/comics/upload', method: :post, id: 'filebox', remote: true) %></span>
+	</span>
+
+	<span class="W50 right pad0 ">
 			<%= form_for @comic, multipart: true do |f| %>
-			<span class="Byell black pad05">
+			<span class="Byell left black pad5">
 				<%= f.label :title, "Title" %>
 				<%= f.text_field :title %>
 			</span>
 
-			<span class="Byell black bl pad05">
+			<span class="Byell left black pad5">
 				<%= f.label :image, "img" %>
 
 			</span>
-			<br>
-			<span class="Byell black bl pad05">
+			<span class="Byell left black pad5">
 				<%= f.label :position, "Position" %>
 				<%= f.text_field :position  %>
 			</span>
-			<span class="Byell bl black bl pad05">
+			<span class="Byell left black pad5">
 				<%= f.label :desc, "Description" %>
 				<%= f.text_area :desc, {class: "pad5"} %>
 			</span>
 
-	    <span class="Byell black pad05">
+	    <span class="Byell left black pad5">
 
 				<%= f.submit "Post"  %>
 			</span>
 		<% end %>
-
-		<%= form_tag('/comics/upload', method: :post, class: 'pad5 block Bblack', id: 'filebox', remote: true) %>
-
 	</span>
 </span>
 
