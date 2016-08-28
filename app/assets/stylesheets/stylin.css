@@ -354,16 +354,25 @@ div {
 	max-height: 50px;
 }
 
-.MH8em {
+.MWH8em {
 	min-height: 8em;
 	height: 8em;
 	max-height: 8em;
+	min-width: 8em;
+	width: 8em;
+	max-width: 8em;
+}
+
+.minH3em {
+	min-height: 3em;
+	height: 3em;
 }
 
 .minH2em {
 	min-height: 2em;
 	height: 2em;
 }
+
 .minH10em {
 	min-height: 10em;
 	height: 10em;
@@ -613,7 +622,7 @@ img:hover.blob {
 
 .goku {
 	background: url('/assets/gokuload.gif') no-repeat ;
-	background-size: 12em 12em;
+	background-size: 9em 9em;
 }
 
 .down3em {

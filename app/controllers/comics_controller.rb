@@ -39,9 +39,11 @@ class ComicsController < ApplicationController
 		else
 		
 			@comics = Comic.all.order(created_at: :asc)
+			@arcs = Arc.all.order(created_at: :asc)
 			@news = Newsie.all
 
 			@cnt = session[:comics_count]
+			session[:comics_count] = 1
 
 			@arc = Arc.new
 			@comic = Comic.new
@@ -59,7 +61,8 @@ class ComicsController < ApplicationController
 
 	def new_comic
 		@comic = Comic.new
-		@cnt = session[:comics_count]
+		session[:comics_count] ? nil : session[:comics_count] = 1
+		@cnt =  session[:comics_count]
 
 	  respond_to do |format|               
 	    format.js {render 'comics/new_comic'}

@@ -1,13 +1,46 @@
-    
 <span class='W100 bl left'>
-  <span class="W20 pad2 left Blttan">
+  
+  <span class="W20 minH3em left Blttan white center">
     New Arc
   </span>
-  <span class="W20 pad2 left Blttan white">
+
+  <span class="W20 minH3em left Blttan white">
+    <%= form_for @arc, class: 'left bl W100 ', multipart: true do |f| %>
+      <%= f.label :title, "Arc Title" %>
+      <%= f.text_field :title %>
+      <%= f.submit 'Create Arc', class: 'in' %>
+    <% end %>
   </span> 
+
+
+  <span class="W10 minH3em left Blttan white center">
+    Select Arc
+  </span>
+
+  <span class="W10 minH3em left Blttan white">
+
+
+    <select id="selectArc" class="W100 bl left">
+        
+      <% @arcs.each do |a| %>
+
+        <option value="<%= a.id %>">
+          <%= a.title %>
+        </option>
+
+      <% end %>
+    </select>
+  </span>
+
+  <span class="W10 minH3em left Blttan white"></span>
+
+  <span class="W10 minH3em left Blttan white">
+    <button id="letsDoThis" class="W100 center">Let's Do This!</button>
+  </span>
+
+  <span class="W10 minH3em left Blttan white"></span>
+
 </span>
-
-
 
 <span class='W100 bl left'>
   <span class="W20 pad2 left Blttan">
@@ -62,26 +95,44 @@
       <div class='Btan bl bordBlack'>
         <span class='Bblob pad2'><%= a.title %></span><span class='Byell'>::::::</span><div class='Bblack pad05 in'><%= link_to 'DELETE', newsy_path(a), method: :delete, class: 'blob pad05' %></div>
 
-        <br>
-        <br>
         <span class='Byell pad05'>
           <%= a.body %>
         </span>
         <span class='font8 white Bblack'><%= a.created_at %></span>
-        <br>
-        <br>
 
       </div>
-      <br>
     <% end %>
 
   </div>
 </span>
   
 <script type="text/javascript">
-  $('#addComic').click(function () {
-    $.get('/comics/count', function(data, res){
-      $('#comicCount').html(data.count);
+  $(document).ready(function () {
+    
+    $('#letsDoThis').click(function() {
+
+      // read all forms
+      var arcChoice = $('#selectArc').val();
+      var comicDetails = [];
+
+      $('.newComic').each(function() {
+
+        var disId = $(this).attr('id');
+        
+        // get title, desc, 
+        $(this)
+      });
+
+
+      $.post('/comics/create_arc', {}, function() {
+        location.reload();
+      });
+    });
+
+    $('#addComic').click(function () {
+      $.get('/comics/count', function(data, res){
+        $('#comicCount').html(data.count);
+      });
     });
   });
 </script>  

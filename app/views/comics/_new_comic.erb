@@ -7,10 +7,10 @@
 				<%= form_for @comic, class: 'left bl W100 ', multipart: true do |f| %>
 				<span class="Blttan left white  W100 pad2">
 					<%= f.label :title, "Title" %>
-					<%= f.text_field :title, { class: 'in mar2LR'}   %>
+					<%= f.text_field :title, { class: 'in mar2LR comicTitle'}   %>
 
 					<%= f.label :position, "Position" %>
-					<%= f.text_field :position, { class: 'in'}  %>
+					<%= f.text_field :position, { class: 'in comicPos'}  %>
 				</span>
 
 				<span class="Btan left black  W100 pad2">
@@ -18,7 +18,7 @@
 				</span>
 				<span class="Btan left black  W100 pad2">
 					<%= f.label :desc, "Description", {class: "W20"} %>
-					<%= f.text_area :desc, {class: " W80  in"} %>
+					<%= f.text_area :desc, {class: " W80  in comicDesc"} %>
 				</span>
 
 			<% end %>
@@ -28,7 +28,7 @@
 		</span>
 
 		<span class="W10 left pad0 marg0 ">
-			<span class='left  W100 pad0 marg0 overf Blttan down3em rel' ><%= form_tag('/comics/upload', class: 'in minH pad0 marg0 W100 MH8em left goku filebox', method: :post, id: 'filebox', remote: true) %></span>
+			<span class='left  W100 pad0 marg0 overf Blttan down3em rel' ><%= form_tag('/comics/upload', class: "in minH pad0 marg0 W100 MWH8em left goku filebox#{@cnt}", method: :post, remote: true) %></span>
 		</span>
 
 		<span class="W10 minH left">
