@@ -41,6 +41,9 @@ class ComicsController < ApplicationController
 			@comics = Comic.all.order(created_at: :asc)
 			@news = Newsie.all
 
+			@cnt = session[:comics_count]
+
+			@arc = Arc.new
 			@comic = Comic.new
 			@newsie = Newsie.new
 		end
@@ -64,8 +67,7 @@ class ComicsController < ApplicationController
 	end
 
 	def count
-		puts session[:comics_count]
-		if session[:comics_count]
+		if session[:comics_count].present?
 			
 			session[:comics_count] += 1
 		else

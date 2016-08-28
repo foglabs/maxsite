@@ -1,20 +1,26 @@
+    
+<span class='W100 bl left'>
+  <span class="W20 pad2 left Blttan">
+    New Arc
+  </span>
+  <span class="W20 pad2 left Blttan white">
+  </span> 
+</span>
 
-<span class='W100 in left'>
+
+
+<span class='W100 bl left'>
   <span class="W20 pad2 left Blttan">
     <%= link_to "Add Blank Comic", new_comic_comics_path, id: 'addComic', :remote => true %>
   </span>
-  <span class="W20 pad2 left Blttan" id="comicCount">
-
-  </span>
+  <span class="W20 pad2 left Blttan white" id="comicCount">
+    <%= @cnt %>
+  </span> 
 </span>
 
-<span class='W100 in left'>
+<span class='W100 bl left'>
 
-</span>
-
-<span class='W100 in left'>
-
-  <div class=" Bwhite minH12em left W90" id="the-comics">
+  <div class=" Bwhite minH12em left W90 " id="the-comics">
       
     <%= render 'comics/new_comic' %>
   </div>
@@ -25,10 +31,10 @@
   </div>
 </span>
 
-<span style="width: 100%; min-height: 3.2em; height: 3.2em; display: block; float: left;"></span>
+<span class="W100 bl left minH2em"></span>
 
-<span class='W100 in left'>
-  <div class='pad5 overf Byell'>
+<span class='W100 bl left '>
+  <div class=' overf Byell'>
     <h1 class='white Bblack pad2'>COMICS</h1>
 
     <% @comics.each do |a| %>
@@ -76,7 +82,6 @@
   $('#addComic').click(function () {
     $.get('/comics/count', function(data, res){
       $('#comicCount').html(data.count);
-      console.log(data)
     });
   });
 </script>  

@@ -360,6 +360,10 @@ div {
 	max-height: 8em;
 }
 
+.minH2em {
+	min-height: 2em;
+	height: 2em;
+}
 .minH10em {
 	min-height: 10em;
 	height: 10em;
