@@ -1,35 +1,37 @@
 
 <span class='W100 in left'>
-  <span class="pad2 Blttan  bl">
-    <%= link_to "Add Comic", new_comic_comics_path, :remote => true %>
+  <span class="W20 pad2 left Blttan">
+    <%= link_to "Add Blank Comic", new_comic_comics_path, id: 'addComic', :remote => true %>
+  </span>
+  <span class="W20 pad2 left Blttan" id="comicCount">
 
-    <button id="mo-comic">asdfasdfasddfs</button>
   </span>
 </span>
 
 <span class='W100 in left'>
 
-  <span class="pad2 Bwhite minH12em bl" id="the-comics">
-      
-    <div class=' inb Byell pad0  minH10em marg0 W80'>
-      <%= render 'comics/new_comic' %>
-    </div>
+</span>
 
-    <div class=' inb Blttan pad0 minH10em marg0 W20'>
-      <span class="in W100 overf left pad5 white">
-      </span>
-    </div>
-  </span>
+<span class='W100 in left'>
+
+  <div class=" Bwhite minH12em left W90" id="the-comics">
+      
+    <%= render 'comics/new_comic' %>
+  </div>
+
+  <div class='left  Blttan pad0 minH10em marg0 W10'>
+    <span class="in W100 overf left pad5 white">
+    </span>
+  </div>
 </span>
 
 <span style="width: 100%; min-height: 3.2em; height: 3.2em; display: block; float: left;"></span>
 
 <span class='W100 in left'>
-  <div class='pad5 bl Byell'>
+  <div class='pad5 overf Byell'>
     <h1 class='white Bblack pad2'>COMICS</h1>
 
     <% @comics.each do |a| %>
-      <br>
       <div class="W100 left bord">
         <div class='Btan W45 left in'>
           <div>
@@ -45,9 +47,6 @@
 
         <div class="break left W45 pad2"><span class=' Byell'><%= a.desc %></span></div>
       </div>
-      <br>
-
-      <br>
     <% end %>
   </div>
   
@@ -72,13 +71,12 @@
 
   </div>
 </span>
-
-
+  
 <script type="text/javascript">
-  $('#mo-comic').click(function() {
-    $.get('<%= new_comic_comics_path %>', function(res, data){
-      console.log(data, res);
+  $('#addComic').click(function () {
+    $.get('/comics/count', function(data, res){
+      $('#comicCount').html(data.count);
+      console.log(data)
     });
   });
-
-</script>
+</script>  

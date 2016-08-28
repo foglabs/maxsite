@@ -49,16 +49,31 @@ class ComicsController < ApplicationController
 	def upload
 		maxy = Comic.maximum(:position)
 		params[:comic][:position] = (Comic.maximum(:position) + 1)
+		params[:comic][:enabled] = false
 		@comic = Comic.create(comic_params)
 		render json: {id: @comic.id}
 	end
 
 	def new_comic
 		@comic = Comic.new
+		@cnt = session[:comics_count]
 
 	  respond_to do |format|               
-	    format.js
+	    format.js {render 'comics/new_comic'}
 	  end        
+	end
+
+	def count
+		puts session[:comics_count]
+		if session[:comics_count]
+			
+			session[:comics_count] += 1
+		else
+
+			session[:comics_count] = 1
+		end
+
+		render json: {count: session[:comics_count]}
 	end
 
 #####
@@ -138,6 +153,6 @@ class ComicsController < ApplicationController
 
 	private
 		def comic_params
-			params.require(:comic).permit(:title, :desc, :image, :position, comic_tag_attributes: [:comic_id, :tag_id])
+			params.require(:comic).permit(:title, :desc, :image, :position, :enabled, comic_tag_attributes: [:comic_id, :tag_id])
 		end
 end

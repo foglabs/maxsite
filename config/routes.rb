@@ -7,10 +7,12 @@ Maxsite::Application.routes.draw do
       get 'login'
       get 'logout'
       post 'auth'
+
       get 'admin'
       post 'upload'
       get 'new_comic'
-      
+      get 'count'
+
       get 'storysofar'
       get 'closeencounters'
       get 'contax'

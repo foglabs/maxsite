@@ -1,3 +1,1 @@
-var ele = $(document.createElement('div').addClass('inb Byell pad0 minH10em marg0 W80'));
-ele.html(<%= escape_javascript( render :partial => 'comics/new_comic' ) %>);
-$('#the-comics').append( ele );
+$('#the-comics').append('<%= escape_javascript( render :partial => 'comics/new_comic' ) %>');
