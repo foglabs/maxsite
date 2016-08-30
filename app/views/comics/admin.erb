@@ -36,7 +36,7 @@
     <button id="letsDoThis" class="W100 center">Let's Do This!</button>
   </span>
 
-  <span class="W10 minH3em left Blttan white"></span>
+  <span class="W10 minH3em left Blttan white" id="errorBox"></span>
 
 </span>
 
@@ -49,22 +49,21 @@
   </span> 
 </span>
 
-<span class='W100 bl left'>
+<span class='W100 bl left' id="the-comics">
 
-  <div class=" Bwhite minH12em left W90 " id="the-comics">
-      
-    <%= render 'comics/new_comic' %>
-  </div>
+  <%= render 'comics/new_comic' %>
 
-  <div class='left  Blttan pad0 minH10em marg0 W10'>
-    <span class="in W100 overf left pad5 white">
-    </span>
-  </div>
 </span>
 
 <span class="W100 bl left minH2em"></span>
   
 <script type="text/javascript">
+
+  function fillFromSketch(info){
+    // go cnt times, new comic, fill each
+
+
+  }
 
   $(document).ready(function () {
   
@@ -90,15 +89,26 @@
         comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: cow}});
       });
 
-      console.log(comicDetails)
+      var idsPresent = true;
 
-      $.ajax({type: 'POST',
-              data: {comicDetails},
-              url: '/arcs/save_arc',
-              beforeSend: function(xhr) { 
-                xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) 
-              },
-      });
+      for(var i=0; i<comicDetails.length; i++){
+        if( !(idsPresent && ( comicDetails[i].comic.id.length > 0 )) ){
+          idsPresent = false;
+        }
+      }
+
+      if(idsPresent){
+
+        $.ajax({type: 'POST',
+                data: {comicDetails},
+                url: '/arcs/save_arc',
+                beforeSend: function(xhr) { 
+                  xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) 
+                },
+        });
+      } else {
+        $('#errorBox').html('Hmm... Images are missing. You better find em!')
+      }
     });
 
     $('#addComic').click(function () {

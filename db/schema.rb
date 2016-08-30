@@ -63,7 +63,7 @@ ActiveRecord::Schema.define(version: 20160830024518) do
     t.datetime "updated_at"
   end
 
-  create_table "sketch", force: true do |t|
+  create_table "sketches", force: true do |t|
     t.text     "info"
     t.boolean  "working",    default: false
     t.datetime "created_at"

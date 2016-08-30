@@ -1,51 +1,75 @@
 <%= javascript_include_tag "dropzone" %>
 
-<div class=' bl Byell pad0 z1 minH10em marg0 W100'> 
-	<span id="" class="W100 white bl minH10em newComic">
+<span class="newComic comicCount<%= @cnt %>" id="">
+		
+	<div class=" Bwhite minH12em left W90 " >
+		      
+		<div class=' bl Byell pad0 z1 minH10em marg0 W100'> 
+			<span id="" class="W100 white bl minH10em ">
 
-		<span class="W70 left  ">
-				<%= form_for @comic, class: 'left bl W100 ', multipart: true do |f| %>
-				<span class="Blttan left white  W100 pad2">
-					<%= f.label :title, "Title" %>
-					<%= f.text_field :title, { class: 'in mar2LR comicTitle'}   %>
+				<span class="W70 left  ">
+						<%= form_for @comic, class: 'left bl W100 ', multipart: true do |f| %>
+						<span class="Blttan left white  W100 pad2">
+							<%= f.label :title, "Title" %>
+							<%= f.text_field :title, { class: 'in mar2LR comicTitle'}   %>
 
-					<%= f.label :position, "Position" %>
-					<%= f.text_field :position, { class: 'in comicPos'}  %>
+							<%= f.label :position, "Position" %>
+							<%= f.text_field :position, { class: 'in comicPos'}  %>
+						</span>
+
+						<span class="Btan left black  W100 pad2">
+						</span>
+
+						<span class="Btan left black  W100 pad2">
+							<%= f.label :desc, "Description", {class: "W20"} %>
+							<%= f.text_area :desc, {class: " W80  in comicDesc"} %>
+						</span>
+
+					<% end %>
 				</span>
 
-				<span class="Btan left black  W100 pad2">
+				<span class="W10 minH left">
 				</span>
 
-				<span class="Btan left black  W100 pad2">
-					<%= f.label :desc, "Description", {class: "W20"} %>
-					<%= f.text_area :desc, {class: " W80  in comicDesc"} %>
+				<span class="W10 left pad0 marg0 ">
+					<span class='left  W100 pad0 marg0 overf Blttan down3em rel' ><%= form_tag('/comics/upload', class: "in minH pad0 marg0 W100 MWH8em left goku filebox#{@cnt}", method: :post, remote: true) %></span>
 				</span>
 
-			<% end %>
-		</span>
+				<span class="W10 minH left">
+				</span>
 
-		<span class="W10 minH left">
-		</span>
+			</span>
+		</div>
+	</div>
 
-		<span class="W10 left pad0 marg0 ">
-			<span class='left  W100 pad0 marg0 overf Blttan down3em rel' ><%= form_tag('/comics/upload', class: "in minH pad0 marg0 W100 MWH8em left goku filebox#{@cnt}", method: :post, remote: true) %></span>
-		</span>
+	<div class='left  Blttan pad0 minH10em marg0 W10'>
+	  <span class="in W100 overf left pad5 white">
+	  	<a href="#" class="upButton bl">up</a>
+	  	<a href="#" class="downButton bl">down</a>
+	  </span>
+	</div>
 
-		<span class="W10 minH left">
-		</span>
-
-	</span>
-</div>
+</span>
 
 <script type="text/javascript">
 
 	var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
 
 	$(document).ready(function() {
-		$(".newComic .filebox<%= @cnt %>").dropzone({params: {'authenticity_token':  AUTH_TOKEN }, paramName: 'comic[image]', url: '/comics/upload', success: function(file, resp) {
-			$(this.element).parent().parent().parent().attr('id', resp.id);
+		var coun = <%= @cnt %>;
+
+		$(".newComic .filebox" + coun).dropzone({params: {'authenticity_token':  AUTH_TOKEN }, paramName: 'comic[image]', url: '/comics/upload', success: function(file, resp) {
+			$(this.element).parent().parent().parent().parent().parent().parent().attr('id', resp.id);
 			$('.dz-success-mark, .dz-error-mark').hide();
 			$('#filebox').removeClass('Bblack').addClass('Bwhite');
 		}});
+
+		$('span.comicCount' + coun + ' a.upButton').click(function() {
+			alert('up' + coun);
+		});
+
+		$('span.comicCount' + coun + ' a.downButton').click(function() {
+			alert('down' + coun);
+		});
 	});
 </script>

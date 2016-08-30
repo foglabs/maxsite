@@ -44,7 +44,15 @@ class ComicsController < ApplicationController
 			@arcs = Arc.all.order(created_at: :asc)
 			@news = Newsie.all
 
+			if @sketch = Sketch.where(working: true).first
+				# get count from sketch..
+				# session[:comics_count] = 
+			else
+				session[:comics_count] = 1
+			end
+
 			@cnt = session[:comics_count]
+
 
 			@arc = Arc.new
 			@comic = Comic.new
