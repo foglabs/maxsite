@@ -15,29 +15,15 @@ class ArcsController < ApplicationController
     end
   end
 
+  def save_arc
+
+    binding.pry
+
+  end
+
   def new
     @arc = Arc.new
   end
-
-  # def edit
-  #   unless @sess.try(:check)
-  #     redirect_to comics_path
-  #   else
-
-
-  #     @comic = Comic.find(params[:id])
-  #   end
-  # end
-
-  # def update
-  #   @comic = Comic.find(params[:id])
-
-  #   if @comic.update(comic_params)
-  #     redirect_to admin_comics_path
-  #   else
-  #     render('edit')
-  #   end
-  # end
 
   def destroy
     @comic = Comic.find(params[:id])

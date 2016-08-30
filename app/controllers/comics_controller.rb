@@ -8,7 +8,7 @@ class ComicsController < ApplicationController
 	def errybody
 		@sess = Session.where(code: request.remote_ip).first
 		@news = Newsie.order('created_at desc').last(10)
-		@tags = Tag.all
+		# @tags = Tag.all
 	end
 
 	def login
@@ -16,8 +16,10 @@ class ComicsController < ApplicationController
 	end
 
 	def logout
-		@sess = Session.where(code: request.remote_ip).first
-		Session.destroy_all
+		if @sess
+			Session.destroy_all
+		end
+		
 		redirect_to comics_path
 	end
 
@@ -43,7 +45,6 @@ class ComicsController < ApplicationController
 			@news = Newsie.all
 
 			@cnt = session[:comics_count]
-			session[:comics_count] = 1
 
 			@arc = Arc.new
 			@comic = Comic.new
@@ -61,7 +62,7 @@ class ComicsController < ApplicationController
 
 	def new_comic
 		@comic = Comic.new
-		session[:comics_count] ? nil : session[:comics_count] = 1
+		# session[:comics_count] ? nil : session[:comics_count] = 1
 		@cnt =  session[:comics_count]
 
 	  respond_to do |format|               
@@ -70,8 +71,8 @@ class ComicsController < ApplicationController
 	end
 
 	def count
-		if session[:comics_count].present?
-			
+
+		if session[:comics_count]
 			session[:comics_count] += 1
 		else
 

@@ -18,13 +18,19 @@ Maxsite::Application.routes.draw do
       get 'contax'
     end
   end
+
+  resources :sketches, only: [:create, :destroy, :update]  
   resources :comments
 
-  resources :tags do
-    resources :comic_tags, only: [:new, :create, :destroy]
-  end
+  # resources :tags do
+  #   resources :comic_tags, only: [:new, :create, :destroy]
+  # end
 
-  resources :arcs, only: [:new, :create, :destroy]
+  resources :arcs do
+    collection do 
+      post 'save_arc'
+    end
+  end
   resources :newsies
 
   # The priority is based upon order of creation: first created -> highest priority.

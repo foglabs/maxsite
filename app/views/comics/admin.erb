@@ -12,13 +12,11 @@
     <% end %>
   </span> 
 
-
   <span class="W10 minH3em left Blttan white center">
     Select Arc
   </span>
 
   <span class="W10 minH3em left Blttan white">
-
 
     <select id="selectArc" class="W100 bl left">
         
@@ -44,7 +42,7 @@
 
 <span class='W100 bl left'>
   <span class="W20 pad2 left Blttan">
-    <%= link_to "Add Blank Comic", new_comic_comics_path, id: 'addComic', :remote => true %>
+    <a id="addComic" href="#">Add Blank Comic</a>
   </span>
   <span class="W20 pad2 left Blttan white" id="comicCount">
     <%= @cnt %>
@@ -66,72 +64,48 @@
 
 <span class="W100 bl left minH2em"></span>
 
-<span class='W100 bl left '>
-  <div class=' overf Byell'>
-    <h1 class='white Bblack pad2'>COMICS</h1>
-
-    <% @comics.each do |a| %>
-      <div class="W100 left bord">
-        <div class='Btan W45 left in'>
-          <div>
-
-            <h1 class='white pad2 in Bblack'><%= a.position %></h1><span class='Bblob pad05 break'><%= a.title %>::<span class='right'>  <%= link_to image_tag(a.image.url, {class: 'W10'}), comic_path(a), class: 'Bblob round bord black pad05 ' %> </span></span>
-
-          </div>
-
-          <div class='Bblack pad05 in left W5'>
-            <span class="Bblob round bord black pad05 left"><%= link_to 'DELETE', comic_path(a), method: :delete, class: 'Bblob left round bord black pad05' %></span> <span class="left"><%= link_to 'EDIT', edit_comic_path(a), class: 'Bblob round bord black ' %></span>
-          </div>
-        </div>
-
-        <div class="break left W45 pad2"><span class=' Byell'><%= a.desc %></span></div>
-      </div>
-    <% end %>
-  </div>
-  
-  <div class='pad5 inb Byell'>
-    <h1 class='white Bblack pad5'>NEWS</h1>
-    <% @news.each do |a| %>
-      <div class='Btan bl bordBlack'>
-        <span class='Bblob pad2'><%= a.title %></span><span class='Byell'>::::::</span><div class='Bblack pad05 in'><%= link_to 'DELETE', newsy_path(a), method: :delete, class: 'blob pad05' %></div>
-
-        <span class='Byell pad05'>
-          <%= a.body %>
-        </span>
-        <span class='font8 white Bblack'><%= a.created_at %></span>
-
-      </div>
-    <% end %>
-
-  </div>
-</span>
   
 <script type="text/javascript">
+
   $(document).ready(function () {
+  
+    var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
     
     $('#letsDoThis').click(function() {
+
+      var cow = 0;
 
       // read all forms
       var arcChoice = $('#selectArc').val();
       var comicDetails = [];
 
       $('.newComic').each(function() {
+        cow += 1;
 
+        console.log($(this).attr('id'))
         var disId = $(this).attr('id');
-        
         // get title, desc, 
-        $(this)
+        var thisTit = $(this).find('input.comicTitle').val();
+        var thisDesc = $(this).find('input.comicDesc').val();
+        // var thisPos = $(this).find('input.comicPos');
+        comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: cow}});
       });
 
+      console.log(comicDetails)
 
-      $.post('/comics/create_arc', {}, function() {
-        location.reload();
+      $.ajax({type: 'POST',
+              data: {comicDetails},
+              url: '/arcs/save_arc',
+              beforeSend: function(xhr) { 
+                xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) 
+              },
       });
     });
 
     $('#addComic').click(function () {
       $.get('/comics/count', function(data, res){
         $('#comicCount').html(data.count);
+        $.get('/comics/new_comic', function() {});
       });
     });
   });
