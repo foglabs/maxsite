@@ -53,7 +53,6 @@ class ComicsController < ApplicationController
 
 			@cnt = session[:comics_count]
 
-
 			@arc = Arc.new
 			@comic = Comic.new
 			@newsie = Newsie.new

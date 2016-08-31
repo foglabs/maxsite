@@ -16,9 +16,18 @@ class ArcsController < ApplicationController
   end
 
   def save_arc
+    maxy = Comic.maximum(:position)
 
-    binding.pry
+    params[:comicDetails].each do |k,v|
+      @comic = Comic.find(v[:comic][:id])
+      @comic.position = v[:comic][:pos].to_i + maxy
+      @comic.desc = v[:comic][:desc]
+      @comic.title = v[:comic][:title]
+      @comic.enabled = true
+      @comic.save
+    end
 
+    redirect_to admin_comics_path
   end
 
   def new
