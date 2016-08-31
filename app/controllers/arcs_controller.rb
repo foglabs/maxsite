@@ -23,6 +23,8 @@ class ArcsController < ApplicationController
       @comic.position = v[:comic][:pos].to_i + maxy
       @comic.desc = v[:comic][:desc]
       @comic.title = v[:comic][:title]
+      @comic.arc_id = params[:arc_id]
+
       @comic.enabled = true
       @comic.save
     end

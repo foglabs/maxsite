@@ -100,12 +100,14 @@
       if(idsPresent){
 
         $.ajax({type: 'POST',
-                data: {comicDetails},
+                data: {arc_id: arcChoice, comicDetails},
                 url: '/arcs/save_arc',
                 beforeSend: function(xhr) { 
                   xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) 
                 },
         });
+
+        $('#errorBox').empty();
       } else {
         $('#errorBox').html('Hmm... Images are missing. You better find em!')
       }

@@ -100,7 +100,7 @@ class ComicsController < ApplicationController
 	end
 
 	def index
-		@comic = Comic.last
+		@comic = Arc.last.comics.first
 
 		if @comic
 			@comms = Comment.where(comic_id: @comic.id)
