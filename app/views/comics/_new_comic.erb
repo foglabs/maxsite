@@ -1,6 +1,6 @@
 <%= javascript_include_tag "dropzone" %>
 
-<span class="newComic comicCount<%= @cnt %>" id="">
+<span class="newComic  comicCount<%= @cnt %>" id="">
 		
 	<div class=" Bwhite minH12em left W90 " >
 		      
@@ -8,23 +8,15 @@
 			<span id="" class="W100 white bl minH10em ">
 
 				<span class="W70 left  ">
-						<%= form_for @comic, class: 'left bl W100 ', multipart: true do |f| %>
-						<span class="Blttan left white  W100 pad2">
+					<%= form_for @comic, class: 'left bl W100', multipart: true do |f| %>
+						<span class="Blttan  mH4em left white  down2em rel W30 pad2">
 							<%= f.label :title, "Title" %>
-							<%= f.text_field :title, { class: 'in mar2LR comicTitle'}   %>
-
-							<%= f.label :position, "Position" %>
-							<%= f.text_field :position, { class: 'in comicPos'}  %>
+							<%= f.text_field :title, { class: 'in mH32 mar2LR comicTitle'}   %>
 						</span>
-
-						<span class="Btan left black  W100 pad2">
+						<span class="Btan mH4em left black  down2em rel W60 pad2">
+							<%= f.label :desc, "Desc", {class: "in"} %>
+							<%= f.text_area :desc, {class: " W80 mH32 in comicDesc"} %>
 						</span>
-
-						<span class="Btan left black  W100 pad2">
-							<%= f.label :desc, "Description", {class: "W20"} %>
-							<%= f.text_area :desc, {class: " W80  in comicDesc"} %>
-						</span>
-
 					<% end %>
 				</span>
 
@@ -43,9 +35,9 @@
 	</div>
 
 	<div class='left  Blttan pad0 minH10em marg0 W10'>
-	  <span class="in W100 overf left pad5 white">
-	  	<a href="#" class="upButton bl">up</a>
-	  	<a href="#" class="downButton bl">down</a>
+	  <span class="in W100 overf left pad5 white" data-count="<%= @cnt %>">
+	  	<a href="#" class="moveButton upButton bl">up</a>
+	  	<a href="#" class="moveButton downButton hidden bl">down</a>
 	  </span>
 	</div>
 
@@ -55,26 +47,66 @@
 
 	var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
 
+	function moveIt(count, up) {
+		var disComic = $('.comicCount' + count);
+
+		if(up){
+			
+			var nextComic = $('.comicCount' + (count + 1));
+			disComic.insertAfter( nextComic ).removeClass('comicCount' + count);
+			nextComic.removeClass('comicCount' + (count + 1)).addClass('comicCount' + count);	
+		} else {
+
+			var prevComic = $('.comicCount' + (count - 1));
+			disComic.insertBefore( prevComic ).removeClass('comicCount' + count);
+			prevComic.removeClass('comicCount' + (count - 1)).addClass('comicCount' + count);
+		}
+
+		resetButtons();
+	}
+
+	function resetButtons(){
+		$('.moveButton').unbind('click');
+
+		var counto = $(this).parent().data('count');
+
+		$('.upButton').click(function() {
+			if(count == 1){
+				$(this).hide();
+			} else {
+				moveIt(counto, true);
+			}
+		});
+
+		$('.downButton').click(function() {
+			moveIt(counto, false);
+		});
+	}
+
 	$(document).ready(function() {
 		var coun = <%= @cnt %>;
+		var thisComic = '.comicCount' + coun;
 
 		$(".newComic .filebox" + coun).dropzone({params: {'authenticity_token':  AUTH_TOKEN }, paramName: 'comic[image]', url: '/comics/upload', success: function(file, resp) {
-			console.log(resp.id)
 
-			$(this.element).parent().parent().parent().parent().parent().parent().attr('id', resp.id);
-
-			console.log($(this.element).parent().parent().parent().parent().parent().parent().attr('id'))
-			
+			$(thisComic).attr('id', resp.id);
 			$('.dz-success-mark, .dz-error-mark').hide();
 			$('#filebox').removeClass('Bblack').addClass('Bwhite');
 		}});
 
-		$('span.comicCount' + coun + ' a.upButton').click(function() {
-			alert('up' + coun);
-		});
+		// if(coun == 1){
+		// 	$(thisComic).find(' a.upButton').hide();
+		// } else {
 
-		$('span.comicCount' + coun + ' a.downButton').click(function() {
-			alert('down' + coun);
-		});
+		// 	$(thisComic).find(' a.upButton').click(function() {
+		// 		moveIt(coun, true);
+		// 	});
+		// }	
+
+		$('.newComic').not(thisComic).find('a.downButton').show();
+
+		// $(thisComic).find(' a.downButton').click(function() {
+		// 	moveIt(coun, false);
+		// });
 	});
 </script>

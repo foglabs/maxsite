@@ -88,6 +88,15 @@ div {
 	padding: 2%;
 }
 
+.mH4em {
+	min-height: 4em;
+	max-height: 4em;
+}
+
+.mH32 {
+	min-height: 32px;
+	max-height: 32px;
+}
 .W1 {
 	min-width: 1%;
 	width: 1%;
@@ -627,6 +636,10 @@ img:hover.blob {
 
 .down3em {
 	bottom: -3em;
+}
+
+.down2em {
+	bottom: -2em;
 }
 
 .z0 {

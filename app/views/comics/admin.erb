@@ -1,7 +1,12 @@
 <span class='W100 bl left'>
   
   <span class="W20 minH3em left Blttan white center">
-    New Arc
+    <span class="W40 pad2 left Blttan">
+      <a id="addComic" href="#">Add Blank Comic</a>
+    </span>
+    <span class="W40 pad2 left Blttan white" id="comicCount">
+      <%= @cnt %>
+    </span>
   </span>
 
   <span class="W20 minH3em left Blttan white">
@@ -40,15 +45,6 @@
 
 </span>
 
-<span class='W100 bl left'>
-  <span class="W20 pad2 left Blttan">
-    <a id="addComic" href="#">Add Blank Comic</a>
-  </span>
-  <span class="W20 pad2 left Blttan white" id="comicCount">
-    <%= @cnt %>
-  </span> 
-</span>
-
 <span class='W100 bl left' id="the-comics">
 
   <%= render 'comics/new_comic' %>
@@ -63,6 +59,10 @@
     // go cnt times, new comic, fill each
 
 
+  }
+
+  function changePosition(which, dir){
+    $('.comicCount' + which)
   }
 
   $(document).ready(function () {
@@ -82,10 +82,14 @@
 
         // I sure hope an image was uploaded!
         var disId = $(this).attr('id');
+
         // get title, desc, 
         var thisTit = $(this).find('input.comicTitle').val();
         var thisDesc = $(this).find('input.comicDesc').val();
+
+        // squares only v
         // var thisPos = $(this).find('input.comicPos');
+
         comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: cow}});
       });
 
@@ -118,6 +122,8 @@
         $('#comicCount').html(data.count);
         $.get('/comics/new_comic', function() {});
       });
+
+
     });
   });
 </script>  
