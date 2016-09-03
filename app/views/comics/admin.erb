@@ -60,9 +60,61 @@
 
 
   }
+  
+  function moveIt(count, up) {
+    var disComic = $('.comicCount' + count);
 
-  function changePosition(which, dir){
-    $('.comicCount' + which)
+    if(up){
+      
+      var prevComic = $('.comicCount' + (count - 1));
+      disComic.insertAfter( prevComic ).removeClass('comicCount' + count).find('span.buttonCon').data('count', (count - 1));
+      prevComic.removeClass('comicCount' + (count - 1)).addClass('comicCount' + count).find('span.buttonCon').data('count', 1);
+      disComic.addClass('comicCount' + (count - 1));
+    } else {
+
+      var nextComic = $('.comicCount' + (count + 1));
+      disComic.insertBefore( nextComic ).removeClass('comicCount' + count).find('span.buttonCon').data('count', (count + 1));
+      nextComic.removeClass('comicCount' + (count + 1)).addClass('comicCount' + count).find('span.buttonCon').data('count', count);
+      disComic.addClass('comicCount' + (count + 1));
+    }
+
+    resetButtons();
+  }
+
+  function resetButtons(){
+
+    $('.moveButton').unbind('click');
+
+    $('.upButton').each(function() {
+      if($(this).parent().data('count') == 1){
+        $(this).hide();
+      }
+    });
+
+    $('.downButton').show();
+    var allButtonCons = $('span.buttonCon');
+    var counts = [];
+    allButtonCons.each(function() {
+      counts.push($(this).data('count'));
+    });
+    allButtonCons.find('a.downButton').show();
+    $('span.buttonCon[data-count="' + Math.max(...counts) + '"]').find('a.downButton').hide();
+
+    $('.upButton:visible').each(function() {
+      var counto = $(this).parent().data('count');
+
+      $(this).click(function() {
+        moveIt(counto, true);
+      });
+    });
+
+    $('.downButton:visible').each(function() {
+      $(this).click(function() {
+        
+        var counto = $(this).parent().data('count');
+        moveIt(counto, false);
+      });
+    });
   }
 
   $(document).ready(function () {
@@ -86,9 +138,6 @@
         // get title, desc, 
         var thisTit = $(this).find('input.comicTitle').val();
         var thisDesc = $(this).find('input.comicDesc').val();
-
-        // squares only v
-        // var thisPos = $(this).find('input.comicPos');
 
         comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: cow}});
       });
@@ -122,8 +171,6 @@
         $('#comicCount').html(data.count);
         $.get('/comics/new_comic', function() {});
       });
-
-
     });
   });
 </script>  

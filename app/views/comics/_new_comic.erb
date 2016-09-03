@@ -35,7 +35,7 @@
 	</div>
 
 	<div class='left  Blttan pad0 minH10em marg0 W10'>
-	  <span class="in W100 overf left pad5 white" data-count="<%= @cnt %>">
+	  <span class="in W100 overf left pad5 white buttonCon"  data-count="<%= @cnt %>">
 	  	<a href="#" class="moveButton upButton bl">up</a>
 	  	<a href="#" class="moveButton downButton hidden bl">down</a>
 	  </span>
@@ -47,42 +47,6 @@
 
 	var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
 
-	function moveIt(count, up) {
-		var disComic = $('.comicCount' + count);
-
-		if(up){
-			
-			var nextComic = $('.comicCount' + (count + 1));
-			disComic.insertAfter( nextComic ).removeClass('comicCount' + count);
-			nextComic.removeClass('comicCount' + (count + 1)).addClass('comicCount' + count);	
-		} else {
-
-			var prevComic = $('.comicCount' + (count - 1));
-			disComic.insertBefore( prevComic ).removeClass('comicCount' + count);
-			prevComic.removeClass('comicCount' + (count - 1)).addClass('comicCount' + count);
-		}
-
-		resetButtons();
-	}
-
-	function resetButtons(){
-		$('.moveButton').unbind('click');
-
-		var counto = $(this).parent().data('count');
-
-		$('.upButton').click(function() {
-			if(count == 1){
-				$(this).hide();
-			} else {
-				moveIt(counto, true);
-			}
-		});
-
-		$('.downButton').click(function() {
-			moveIt(counto, false);
-		});
-	}
-
 	$(document).ready(function() {
 		var coun = <%= @cnt %>;
 		var thisComic = '.comicCount' + coun;
@@ -93,20 +57,5 @@
 			$('.dz-success-mark, .dz-error-mark').hide();
 			$('#filebox').removeClass('Bblack').addClass('Bwhite');
 		}});
-
-		// if(coun == 1){
-		// 	$(thisComic).find(' a.upButton').hide();
-		// } else {
-
-		// 	$(thisComic).find(' a.upButton').click(function() {
-		// 		moveIt(coun, true);
-		// 	});
-		// }	
-
-		$('.newComic').not(thisComic).find('a.downButton').show();
-
-		// $(thisComic).find(' a.downButton').click(function() {
-		// 	moveIt(coun, false);
-		// });
 	});
 </script>
