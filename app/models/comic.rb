@@ -1,5 +1,6 @@
 class Comic < ActiveRecord::Base
 	has_many :comments
+	belongs_to :arc
 	has_many :tags, through: :comic_tags
 	validates :position, uniqueness: true
 

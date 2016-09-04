@@ -107,6 +107,8 @@ class ComicsController < ApplicationController
 			@comms = Comment.where(comic_id: @comic.id)
 			@comm = Comment.new
 
+			@arc = @comic.arc
+
 			# @taggy = []
 			# ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
 
