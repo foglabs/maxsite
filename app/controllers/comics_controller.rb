@@ -100,6 +100,7 @@ class ComicsController < ApplicationController
 	end
 
 	def index
+		# show us the first page of the newest arc
 		@comic = Arc.last.comics.first
 
 		if @comic

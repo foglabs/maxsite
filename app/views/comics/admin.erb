@@ -70,9 +70,15 @@
 
       if(prevComic.length){
 
-        disComic.insertBefore( prevComic ).removeClass('comicCount' + count).find('span.buttonCon').data('count', (count - 1));
-        prevComic.removeClass('comicCount' + (count - 1)).addClass('comicCount' + count).find('span.buttonCon').data('count', 1);
-        disComic.addClass('comicCount' + (count - 1));  
+        disComic.insertBefore( prevComic );
+
+        disComic.removeClass('comicCount' + count);
+        $(disComic.find('span.buttonCon')).attr('data-count', (count - 1));
+
+        prevComic.removeClass('comicCount' + (count - 1)).addClass('comicCount' + count);
+
+        disComic.addClass('comicCount' + (count - 1));
+        $(prevComic.find('span.buttonCon')).attr('data-count', count);
       }
       
     } else {
@@ -81,9 +87,17 @@
 
       if(nextComic.length){
 
-        disComic.insertAfter( nextComic ).removeClass('comicCount' + count).find('span.buttonCon').data('count', (count + 1));
-        nextComic.removeClass('comicCount' + (count + 1)).addClass('comicCount' + count).find('span.buttonCon').data('count', count);
+        disComic.insertAfter( nextComic );
+
+        disComic.removeClass('comicCount' + count);
+
+        $(disComic.find('span.buttonCon')).attr('data-count', (count + 1));
+        
+        nextComic.removeClass('comicCount' + (count + 1)).addClass('comicCount' + count);
+
         disComic.addClass('comicCount' + (count + 1));
+        $(nextComic.find('span.buttonCon')).attr('data-count', count);
+
       }
     }
 
@@ -92,7 +106,25 @@
 
   function resetButtons(){
 
-    $('.upButton .downButton').off('click');
+    $('.upButton, .downButton').show();
+
+    $('.upButton, .downButton').off('click');
+
+    $('.upButton').each(function() {
+      $(this).click(function() {
+
+        var counto = parseInt($(this).parent().attr('data-count'));
+        moveIt(counto, true);
+      });
+    });
+
+    $('.downButton').each(function() {
+      $(this).click(function() {
+        
+        var counto = parseInt($(this).parent().attr('data-count'));
+        moveIt(counto, false);
+      });
+    });
 
     // hide up button for top
     $('.buttonCon[data-count="1"]').find('a.upButton').hide();
@@ -101,31 +133,16 @@
     var allButtonCons = $('span.buttonCon');
     var counts = [];
     allButtonCons.each(function() {
-      counts.push($(this).data('count'));
+      counts.push($(this).attr('data-count'));
     });
 
     var maxy = Math.max(...counts);
     allButtonCons.not('span.buttonCon[data-count="' + maxy + '"]').find('a.downButton').show();
 
-    $('.upButton:visible').each(function() {
-      var counto = $(this).parent().data('count');
-
-      $(this).click(function() {
-        console.log(counto)
-        moveIt(counto, true);
-      });
-    });
-
-    $('.downButton:visible').each(function() {
-      $(this).click(function() {
-        
-        var counto = $(this).parent().data('count');
-        moveIt(counto, false);
-      });
-    });
   }
 
   $(document).ready(function () {
+    resetButtons();
   
     var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
     
@@ -163,13 +180,13 @@
         $.ajax({type: 'POST',
                 data: {arc_id: arcChoice, comicDetails},
                 url: '/arcs/save_arc',
-                beforeSend: function(xhr) { 
-                  xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) 
-                },
+                beforeSend: function(xhr) { xhr.setRequestHeader('X-CSRF-Token', AUTH_TOKEN) },
+                success: function(data){ console.log(data)}
         });
 
         $('#errorBox').empty();
       } else {
+
         $('#errorBox').html('Hmm... Images are missing. You better find em!')
       }
     });

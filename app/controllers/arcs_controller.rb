@@ -29,7 +29,7 @@ class ArcsController < ApplicationController
       @comic.save
     end
 
-    redirect_to admin_comics_path
+    return 'Suck it down!'
   end
 
   def new
