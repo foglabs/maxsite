@@ -1,26 +1,29 @@
 <%= javascript_include_tag "dropzone" %>
 
-<span class="newComic  comicCount<%= @cnt %>" id="">
+<span class="newComic comicCount<%= @cnt %>" id="">
 		
-	<div class=" Bwhite minH12em left W90 " >
+	<div class="  minH12em left W90 " >
 		      
 		<div class=' bl Byell pad0 z1 minH10em marg0 W100'> 
 			<span id="" class="W100 white bl minH10em ">
 
-				<span class="W70 left  ">
+				<span class="W3 minH left">
+				</span>
+
+				<span class="W74 left  ">
 					<%= form_for @comic, class: 'left bl W100', multipart: true do |f| %>
-						<span class="Blttan  mH4em left white  down2em rel W30 pad2">
-							<%= f.label :title, "Title" %>
+						<span class="Blttan  mH4em left white  down2em rel W30 pad2 round">
+							<%= f.label :title, "Title", {class: 'down3 rel'} %>
 							<%= f.text_field :title, { class: 'in mH32 mar2LR comicTitle'}   %>
 						</span>
-						<span class="Btan mH4em left black  down2em rel W60 pad2">
-							<%= f.label :desc, "Desc", {class: "in"} %>
+						<span class="Btan mH4em left black  down2em rel W60 pad2 round">
+							<%= f.label :desc, "Desc", {class: "in up12 rel"} %>
 							<%= f.text_area :desc, {class: " W80 mH32 in comicDesc"} %>
 						</span>
 					<% end %>
 				</span>
 
-				<span class="W10 minH left">
+				<span class="W3 minH left">
 				</span>
 
 				<span class="W10 left pad0 marg0 ">

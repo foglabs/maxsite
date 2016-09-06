@@ -7,6 +7,7 @@ class ArcsController < ApplicationController
 
   def create
     @arc = Arc.create(arc_params)
+    @arc.enabled = false
 
     if @arc.save
       redirect_to admin_comics_path
@@ -17,6 +18,7 @@ class ArcsController < ApplicationController
 
   def save_arc
     maxy = Comic.maximum(:position)
+    @arc = Arc.find(params[:arc_id])
 
     params[:comicDetails].each do |k,v|
       @comic = Comic.find(v[:comic][:id])
@@ -29,6 +31,9 @@ class ArcsController < ApplicationController
       @comic.save
     end
 
+    @arc.enabled = true
+    @arc.save
+    
     return 'Suck it down!'
   end
 

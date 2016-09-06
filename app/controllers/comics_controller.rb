@@ -61,7 +61,12 @@ class ComicsController < ApplicationController
 
 	def upload
 		maxy = Comic.maximum(:position)
-		params[:comic][:position] = (Comic.maximum(:position) + 1)
+
+		if !maxy
+			maxy = 0
+		end
+
+		params[:comic][:position] = (maxy + 1)
 		params[:comic][:enabled] = false
 		@comic = Comic.create(comic_params)
 		render json: {id: @comic.id}
@@ -124,6 +129,8 @@ class ComicsController < ApplicationController
 		@comms = Comment.where(comic_id: params[:id])
 
  		@comic = Comic.find(params[:id])
+ 		@arc = @comic.arc
+
 		@a = @comic.lastcom
 		@b = @comic.nextcom
 	end

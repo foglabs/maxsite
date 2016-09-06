@@ -1,29 +1,38 @@
-<span class='W100 bl left'>
-  
-  <span class="W20 minH3em left Blttan white center">
-    <span class="W40 pad2 left Blttan">
-      <a id="addComic" href="#">Add Blank Comic</a>
-    </span>
-    <span class="W40 pad2 left Blttan white" id="comicCount">
-      <%= @cnt %>
-    </span>
-  </span>
-
-  <span class="W20 minH3em left Blttan white">
+<span class="W100 bl left">
+  <span class="W100 minH3em left Blttan white pad2 bord">
     <%= form_for @arc, class: 'left bl W100 ', multipart: true do |f| %>
       <%= f.label :title, "Arc Title" %>
       <%= f.text_field :title %>
       <%= f.submit 'Create Arc', class: 'in' %>
     <% end %>
   </span> 
+</span>
+
+<span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
+
+<span class='W100 bl left bord white'>
+  
+  <span class="W20 minH3em left Blttan white center">
+    <span class="W40 pad2 left Blttan rel down3">
+      <button id="addComic" href="#">Add Blank Comic</button>
+    </span>
+    <span class="W40 pad2 left Blttan white" id="comicCount">
+      <span class="rel down5">
+        <%= @cnt %>
+      </span>
+    </span>
+  </span>
+
+  <span class="W20 minH3em left Blttan white">
+  </span> 
 
   <span class="W10 minH3em left Blttan white center">
-    Select Arc
+    <span class="rel down10">Select Arc</span>
   </span>
 
   <span class="W10 minH3em left Blttan white">
 
-    <select id="selectArc" class="W100 bl left">
+    <select id="selectArc" class="W100 bl left rel down8">
         
       <% @arcs.each do |a| %>
 
@@ -38,7 +47,7 @@
   <span class="W10 minH3em left Blttan white"></span>
 
   <span class="W10 minH3em left Blttan white">
-    <button id="letsDoThis" class="W100 center">Let's Do This!</button>
+    <button id="letsDoThis" class="W100 center rel down10">Let's Do This!</button>
   </span>
 
   <span class="W10 minH3em left Blttan white" id="errorBox"></span>
@@ -148,23 +157,22 @@
     
     $('#letsDoThis').click(function() {
 
-      var cow = 0;
 
       // read all forms
       var arcChoice = $('#selectArc').val();
       var comicDetails = [];
 
       $('.newComic').each(function() {
-        cow += 1;
 
         // I sure hope an image was uploaded!
         var disId = $(this).attr('id');
+        var pos = $(this).find('span.buttonCon').attr('data-count');
 
         // get title, desc, 
         var thisTit = $(this).find('input.comicTitle').val();
         var thisDesc = $(this).find('input.comicDesc').val();
 
-        comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: cow}});
+        comicDetails.push({comic: {id: disId, title: thisTit, desc: thisDesc, pos: pos}});
       });
 
       var idsPresent = true;
@@ -185,6 +193,7 @@
         });
 
         $('#errorBox').empty();
+        location.reload();
       } else {
 
         $('#errorBox').html('Hmm... Images are missing. You better find em!')

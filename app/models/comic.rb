@@ -16,6 +16,14 @@ class Comic < ActiveRecord::Base
 	end
 
 	def lastcom
-		Comic.where(enabled: true).where('position < ?', position).try(:last)
+		com = Comic.where(enabled: true).where('position < ?', position).try(:last)
+
+		if com && com.arc == arc
+			com
+		elsif com.try(:arc)
+			com.arc.comics.first
+		else
+			com
+		end
 	end
 end

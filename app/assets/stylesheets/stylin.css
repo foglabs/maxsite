@@ -97,10 +97,17 @@ div {
 	min-height: 32px;
 	max-height: 32px;
 }
+
 .W1 {
 	min-width: 1%;
 	width: 1%;
 	max-width: 1%;
+}
+
+.W3 {
+	min-width: 3%;
+	width: 3%;
+	max-width: 3%;
 }
 
 .W4 {
@@ -215,6 +222,13 @@ div {
 	width: 70%;
 	max-width: 70%;
 }
+
+.W74 {
+	min-width: 74%;
+	width: 74%;
+	max-width: 74%;
+}
+
 .W75 {
 	min-width: 75%;
 	width: 75%;
@@ -398,6 +412,26 @@ div {
 
 .up16 {
 	top: -16px;
+}
+
+.up12 {
+	top: -12px;
+}
+
+.down3 {
+	bottom: -3px;
+}
+
+.down5 {
+	bottom: -5px;
+}
+
+.down8 {
+	bottom: -8px;
+}
+
+.down10 {
+	bottom: -10px;
 }
 
 .bl {
