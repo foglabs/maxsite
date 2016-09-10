@@ -1,13 +1,16 @@
-<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
-</div>
-
 <% if @arc %>
-  <div class="W100 left">
-    <span class="Bblack P2"><%= @arc.title %></span><span class="Bwhite black P2"><%= @comic.title %></span>
+  <div class="W100 left font12 rel down08em ">
+    <span class="Bblack  P1"><%= @arc.title %></span><span class="Bwhite black P1"><%= @comic.title %></span>
   </div>
+  <div class="W100 left font12 rel ">
+    <span class="Bblack o20 bl W100  P1 mH1em up1em rel">
+    
+    </span>
+  </div>  
+  
+  <span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
 <% end %>
 
-<span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
 
 <div class="W100 left">
 	<span class='left W10 in minH'>
@@ -36,7 +39,7 @@
 <div class='black W100'>
 		<div class="W100">
 		  <div class='lttan Bltan'>
-		    <span class="P1pt5 W90 inb round Bwhite"><h1 class="pad05 bold black font18  in"><%= @comic.title %></h1> <h2 class="in font10"><%= @comic.format_time %></h2></span>
+		    <span class="P1pt5 W90 inb  Bwhite"><h1 class="pad05 bold black font18  in"><%= @comic.title %></h1> <h2 class="in font10"><%= @comic.format_time %></h2></span>
 		  </div>
 		</div>
 		<div class="W100">
@@ -61,28 +64,6 @@
   <span class='W5 minH left'></span>
 </div>
 
-<br>
-<div class='black W100'>
-
-  <span class='W5 minH left'></span>
-
-  <span class='W90 minH left'>
-    <%= render 'comments/new' %>
-  </span>
-
-  <span class='W5 minH left'></span>
-</div>
-
-<div class='black W100'>
-
-  <span class='W5 minH left'></span>
-
-  <span class='W90 minH left'>
-    <%= render 'comments/show' %>
-  </span>
-
-  <span class='W5 minH left'></span>
-</div>
 
 <script type="text/javascript">
 	document.getElementById('bar').width

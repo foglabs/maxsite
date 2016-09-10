@@ -12,11 +12,11 @@ class Comic < ActiveRecord::Base
 	end
 
 	def nextcom
-		Comic.where(enabled: true).where('position > ?', position).try(:first)
+		Comic.where(enabled: true).where('position > ?', position).order(position: :asc).try(:first)
 	end
 
 	def lastcom
-		com = Comic.where(enabled: true).where('position < ?', position).try(:last)
+		com = Comic.where(enabled: true).where('position < ?', position).order(position: :asc).try(:last)
 
 		if com && com.arc == arc
 			com

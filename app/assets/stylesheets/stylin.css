@@ -80,12 +80,21 @@ div {
 
 /*widths heights*/
 
+.P1 {
+	padding: 1%;
+}
+
 .P1pt5 {
 	padding: 1.5%;
 }
 
 .P2 {
 	padding: 2%;
+}
+
+.mH1em {
+	min-height: 1em;
+	max-height: 1em;
 }
 
 .mH4em {
@@ -611,23 +620,23 @@ a:hover.Bblobdiv {
 }
 
 .bord {
-	border: 4px solid #EEEEEE;
+	border: 2px solid #EEEEEE;
 }
 .bordBlack {
-	border: 4px solid #000000;
+	border: 2px solid #000000;
 }
 
 .bordBlackT {
-	border: 6px solid #000000;
+	border: 2px solid #000000;
 }
 
 /* specifics */
 
 a.blob {
-	border: 2px solid;
+/*	border: 2px solid;
 	border-radius: 16px;
 	background-color: #FFFF22;
-	color: #000000;
+	color: #000000;*/
 }
 
 img.blob {
@@ -674,6 +683,14 @@ img:hover.blob {
 
 .down2em {
 	bottom: -2em;
+}
+
+.down08em {
+	bottom: -0.52em;
+}
+
+.up1em {
+	top: -1em;
 }
 
 .z0 {

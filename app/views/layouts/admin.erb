@@ -19,12 +19,12 @@
       <span class="W5 minH in left"> </span>
 
       <span class="W50 in Bblob">
-        <%= link_to image_tag('/assets/header.png', {class: 'W40 blob Bblob bordBlack'}), comics_path, {class: 'blob Bblob' } %>
+        <%= link_to image_tag('/assets/header.png', {class: 'W40 blob Bblob '}), comics_path, {class: 'blob Bblob' } %>
       </span>
 
-      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/homebase.png', {class: 'blob Bblob W10 bordBlack'}), comics_path, {class: 'blob Bblob' } %></span>
-      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob W10 bordBlack'}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
-      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob W10 bordBlack'}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/homebase.png', {class: 'blob Bblob W10 '}), comics_path, {class: 'blob Bblob' } %></span>
+      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob W10 '}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+      <span class="<%= @sess ? 'W10' : 'W15' %> in"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob W10 '}), contax_comics_path, {class: 'blob Bblob ' } %></span>
 
       <% if @sess %>
         <span class="W10 in"><%= link_to "◊", admin_comics_path, {class: 'blob Bblob font12 white pad2'} %></span>

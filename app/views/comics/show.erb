@@ -1,9 +1,7 @@
-<div id="bar" class="W100 minH20 Bblack up20 rel o20 ">
-</div>
 
 <% if @arc %>
-  <div class="W100 left">
-    <span class="Bblack P2"><%= @arc.title %></span><span class="Bwhite black P2"><%= @comic.title %></span>
+  <div class="W100 left font12 rel down08em">
+    <span class="Bblack  P1"><%= @arc.title %></span><span class="Bwhite black P1"><%= @comic.title %></span>
   </div>
 <% end %>
 
@@ -14,7 +12,6 @@
 	</span>
 
 	<span class='left W80 in minH'>
-  <%= @comic.position %>
 		<br>
 		<%= image_tag(@comic.image.url, {class: 'W100 Blttan'})  %>
 
@@ -58,29 +55,6 @@
   <span class='W5 minH left'></span>
 
   <span class='W90 minH left'>
-  </span>
-
-  <span class='W5 minH left'></span>
-</div>
-
-<br>
-<div class='black W100'>
-
-  <span class='W5 minH left'></span>
-
-  <span class='W90 minH left'>
-    <%= render 'comments/new' %>
-  </span>
-
-  <span class='W5 minH left'></span>
-</div>
-
-<div class='black W100'>
-
-  <span class='W5 minH left'></span>
-
-  <span class='W90 minH left'>
-    <%= render 'comments/show' %>
   </span>
 
   <span class='W5 minH left'></span>

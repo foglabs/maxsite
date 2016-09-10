@@ -40,7 +40,7 @@ class ComicsController < ApplicationController
 			redirect_to comics_path
 		else
 		
-			@comics = Comic.all.order(created_at: :asc)
+			@comics = Comic.all.order(position: :asc)
 			@arcs = Arc.all.order(created_at: :asc)
 			@news = Newsie.all
 
@@ -106,7 +106,7 @@ class ComicsController < ApplicationController
 
 	def index
 		# show us the first page of the newest arc
-		@comic = Arc.last.comics.first
+		@comic = Arc.where(enabled: true).last.comics.where(enabled: true).order(position: :asc).first
 
 		if @comic
 			@comms = Comment.where(comic_id: @comic.id)
