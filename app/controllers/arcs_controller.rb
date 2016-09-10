@@ -1,9 +1,13 @@
 class ArcsController < ApplicationController
 
-  def show
-    # list of storylines
-    @arcs = Arc.all
+  def index
+    @arcs = Arc.where(enabled: true).order(created_at: :asc).all
   end
+
+  # def show
+  #   # list of storylines
+  #   @arcs = Arc.all
+  # end
 
   def create
     @arc = Arc.create(arc_params)

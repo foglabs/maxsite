@@ -15,17 +15,26 @@
 		<div class='W100 left Bblack nowrap'>
 			<span class="W10 minH in left"> </span>
 
-			<span class="<%= @sess ? 'W30' : 'W30' %> left in Bblob btn">
+			<span class="W25 left in Bblob btn">
 				<%= link_to image_tag('/assets/header.png', {class: 'blob Bblob '}), comics_path, {class: 'blob Bblob' } %>
 			</span>
+
 			<span class="W1 in minH left"></span>
 
-			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob '}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+			<span class="W12 in left"><%= link_to image_tag('/assets/arcs.png', {class: 'blob Bblob '}), arcs_path, {class: 'blob Bblob' } %></span>
+
 			<span class="W1 in minH left"></span>
-			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob '}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+
+			<span class="W12 in left"><%= link_to image_tag('/assets/storysofar.png', {class: 'blob Bblob '}), storysofar_comics_path, {class: 'blob Bblob' } %></span>
+			
+			<span class="W1 in minH left"></span>
+
+			<span class="W12 in left"><%= link_to image_tag('/assets/closeencounters.png', {class: 'blob Bblob '}), closeencounters_comics_path, {class: 'blob Bblob' } %></span>
+			
 			<span class="W1 in minH left"></span>
 			
-			<span class="<%= @sess ? 'W12' : 'W15' %> in left"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob '}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+			<span class="W12 in left"><%= link_to image_tag('/assets/contax2.png', {class: 'blob Bblob '}), contax_comics_path, {class: 'blob Bblob ' } %></span>
+			
 			<span class="W1 in minH left"></span>
 
 		  <% if @sess %>

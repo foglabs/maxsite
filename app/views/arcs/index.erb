@@ -1,0 +1,6 @@
+<% @arcs.each do |a| %>
+
+  <span class="W100 bl  Bblack left P5"><a style="color: #000000;" class="P5 black Bwhite bl W100" href="/comics/<%= a.comics.order(position: :asc).first.id %>"><%= a.title %></a></span>
+  <span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
+
+<% end %>
