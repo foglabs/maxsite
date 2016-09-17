@@ -1,6 +1,31 @@
+<div class="W100">
+  <div class='bord'>
+
+    <span class='W33 minH in'></span>
+
+    <span class='W33 minH in'>
+      <span class='minH Bwhite pad05 bl'><h1 class="font48 fSig black W100 center">Storylines</h1></span>
+    </span>
+
+    <span class='W33 minH in'></span>
+  </div>
+</div>
+
+<div class="W100 minH20 Bblack up20 rel o20">
+</div>
+
+<span class="W100 bl font24 Bblack left padLBT4">
+  
+ Click below to read a story arc...
+</span>
+
+<span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
+
 <% @arcs.each do |a| %>
 
-  <span class="W100 bl  Bblack left P5"><a style="color: #000000;" class="P5 black Bwhite bl W100" href="/comics/<%= a.comics.order(position: :asc).first.id %>"><%= a.title %></a></span>
+  <span class="W100 bl font24 Bblack left "><a style="color: #000000;" class="padBT5 center arc black Bwhite bl W100" href="/comics/<%= a.comics.order(position: :asc).first.id %>"><%= a.title %></a></span>
+  
   <span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
-
 <% end %>
+
+<span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>

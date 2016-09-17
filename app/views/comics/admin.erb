@@ -1,5 +1,5 @@
 <span class="W100 bl left">
-  <span class="W100 minH3em left Blttan white pad2 bord">
+  <span class="W100 minH3em left Blttan white pad2">
     <%= form_for @arc, class: 'left bl W100 ', multipart: true do |f| %>
       <%= f.label :title, "Arc Title" %>
       <%= f.text_field :title %>
@@ -10,7 +10,7 @@
 
 <span style="min-height: 1em; display: block; float: left; height: 1em; width: 100%;"></span>
 
-<span class='W100 bl left bord white'>
+<span class='W100 bl left  white'>
   
   <span class="W20 minH3em left Blttan white center">
     <span class="W40 pad2 left Blttan rel down3">
@@ -156,7 +156,6 @@
     var AUTH_TOKEN=$('meta[name="csrf-token"]').attr('content');
     
     $('#letsDoThis').click(function() {
-
 
       // read all forms
       var arcChoice = $('#selectArc').val();

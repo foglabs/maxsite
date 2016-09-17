@@ -75,7 +75,7 @@ a:visited {
 }
 
 div {
-	border-radius: 7px;
+	/*border-radius: 7px;*/
 }
 
 /*widths heights*/
@@ -443,6 +443,31 @@ div {
 	bottom: -10px;
 }
 
+
+.down3em {
+	bottom: -3em;
+}
+
+.down2em {
+	bottom: -2em;
+}
+
+.down08em {
+	bottom: -0.7em;
+}
+
+.up1em {
+	top: -1em;
+}
+
+.z0 {
+	z-index: 0;
+}
+
+.z1 {
+	z-index: 1;
+}
+
 .bl {
 	display: block;
 }
@@ -583,6 +608,10 @@ a:hover.Bblobdiv {
 	padding: 2%;
 }
 
+.pad4 {
+	padding: 4%;
+}
+
 .pad5 {
 	padding: 5%;
 }
@@ -593,6 +622,17 @@ a:hover.Bblobdiv {
 
 .npad5 {
 	padding: -5%;
+}
+
+.padLBT4 {
+	padding-left: 4%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+}
+
+.padBT5 {
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 
 .marg0 {
@@ -662,7 +702,6 @@ img:hover.blob {
 .belt {
 	
 	display: inline-block !important;
-
 	margin: -3px !important;
 	padding: 0px !important;
 }
@@ -677,26 +716,6 @@ img:hover.blob {
 	background-size: 9em 9em;
 }
 
-.down3em {
-	bottom: -3em;
-}
-
-.down2em {
-	bottom: -2em;
-}
-
-.down08em {
-	bottom: -0.52em;
-}
-
-.up1em {
-	top: -1em;
-}
-
-.z0 {
-	z-index: 0;
-}
-
-.z1 {
-	z-index: 1;
+.arc:hover {
+	background-color: #AABBDD;
 }
