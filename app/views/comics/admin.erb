@@ -52,19 +52,11 @@
 </span>
 
 <span class="W100 bl left">
-  <span class="W100 minH3em left Blttan white pad2">
-    <%= form_for @arc, class: 'left bl W100 ', multipart: true do |f| %>
-      <%= f.label :title, "Arc Title" %>
-      <%= f.text_field :title %>
-      <%= f.submit 'Create Arc', class: 'in' %>
-    <% end %>
-  </span> 
+  <%= render 'arcs/new' %>
 </span>
-
 
 <span class="W100 bl left minH2em"></span>
   
-
 <span class='W45  in left'>
   <div class='pad5 inb Byell'>
     <h1 class='white Bblack pad2'>COMICS</h1>
@@ -89,7 +81,7 @@
     <h1 class='white Bblack pad5'>ARCS</h1>
     <% @arcs.each do |a| %>
       <div class='Btan bl bordBlack'>
-        <span class='Bblob pad2'><%= a.title %></span><span class='Byell'>::::::</span><div class='Bblack pad05 in'></div>
+        <span class='Bblob pad2'><%= a.title %> - <%= a.comics.count %> Pages</span><span class='Byell'>::::::</span><div class='Bblack pad05 in'></div>
 
         <span class='font8 white Bblack'><%= a.created_at %></span>
         <br>
@@ -103,7 +95,6 @@
 </span>
 
 <span class="W100 bl left">
-  
 
   <div class='pad5 inb Byell'>
     <h1 class='white Bblack pad5'>NEWS</h1>
@@ -127,15 +118,11 @@
   </div>
 </span>
 
-
-  
 <script type="text/javascript">
 
-  function fillFromSketch(info){
-    // go cnt times, new comic, fill each
-
-
-  }
+  // function fillFromSketch(info){
+  //   // go cnt times, new comic, fill each
+  // }
   
   function moveIt(count, up) {
     var disComic = $('.comicCount' + count);

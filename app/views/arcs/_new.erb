@@ -1,0 +1,7 @@
+<span class="W100 minH3em left Blttan white pad2">
+  <%= form_for @arc, url: {controller: 'arcs', action: 'create'}, class: 'left bl W100 ' do |f| %>
+    <%= f.label :title, "Arc Title" %>
+    <%= f.text_field :title %>
+    <%= f.submit 'Create Arc', class: 'in' %>
+  <% end %>
+</span> 

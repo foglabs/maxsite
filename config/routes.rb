@@ -29,6 +29,7 @@ Maxsite::Application.routes.draw do
   resources :arcs do
     collection do 
       get 'index'
+      post 'create'
       post 'save_arc'
     end
   end

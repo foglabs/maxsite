@@ -40,7 +40,7 @@ class ComicsController < ApplicationController
 			redirect_to comics_path
 		else
 		
-			@comics = Comic.all.order(position: :asc)
+			@comics = Comic.where(enabled: true).order(position: :asc).all
 			@arcs = Arc.all.order(created_at: :asc)
 			@news = Newsie.all
 
