@@ -117,8 +117,15 @@ class ComicsController < ApplicationController
 			# @taggy = []
 			# ComicTag.where(comic_id: @comic.id).each {|a| @taggy << a.tag }.uniq
 
-			@a = @comic.lastcom
-			@b = @comic.nextcom
+			c1 = @comic.lastcom
+			c2 = @comic.nextcom
+			c3 = @arc.lastarc
+			c4 = @arc.nextarc
+
+			@a = c1 ? "/comics/#{c1.id}" : "#"
+			@b = c2 ? "/comics/#{c2.id}" : "#"
+			@c = c3 ? "/comics/#{c3.id}" : "#"
+			@d = c4 ? "/comics/#{c4.id}" : "#"
 		end
 	end
 #####
@@ -131,8 +138,15 @@ class ComicsController < ApplicationController
  		@comic = Comic.find(params[:id])
  		@arc = @comic.arc
 
-		@a = @comic.lastcom
-		@b = @comic.nextcom
+		c1 = @comic.lastcom
+		c2 = @comic.nextcom
+		c3 = @arc.lastarc
+		c4 = @arc.nextarc
+
+		@a = c1 ? "/comics/#{c1.id}" : "#"
+		@b = c2 ? "/comics/#{c2.id}" : "#"
+		@c = c3 ? "/comics/#{c3.id}" : "#"
+		@d = c4 ? "/comics/#{c4.id}" : "#"
 	end
 
 	def create

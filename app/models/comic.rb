@@ -12,16 +12,16 @@ class Comic < ActiveRecord::Base
 	end
 
 	def nextcom
-		Comic.where(enabled: true).where('position > ?', position).order(position: :asc).try(:first)
+		Comic.order(position: :asc).where(enabled: true).where('position > ?', position).try(:first)
 	end
 
 	def lastcom
-		com = Comic.where(enabled: true).where('position < ?', position).order(position: :asc).try(:last)
+		com = Comic.order(position: :desc).where(enabled: true).where('position < ?', position).try(:first)
 
 		if com && com.arc == arc
 			com
 		elsif com.try(:arc)
-			com.arc.comics.first
+			com.arc.comics.order(position: :asc).first
 		else
 			com
 		end

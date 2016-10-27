@@ -23,6 +23,7 @@ class ArcsController < ApplicationController
   def save_arc
     maxy = Comic.maximum(:position)
     @arc = Arc.find(params[:arc_id])
+    pos = Arc.count(enabled: true) + 1
 
     params[:comicDetails].each do |k,v|
       @comic = Comic.find(v[:comic][:id])
@@ -35,6 +36,7 @@ class ArcsController < ApplicationController
       @comic.save
     end
 
+    @arc.arc_position = pos
     @arc.enabled = true
     @arc.save
     
