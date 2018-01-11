@@ -39,8 +39,6 @@ class ArcsController < ApplicationController
     @arc.arc_position = pos
     @arc.enabled = true
     @arc.save
-
-    return 'Suck it down!'
   end
 
   def new
